@@ -129,3 +129,48 @@ p, ul { margin: 0 0 1rem; }
   .tile { transition: none; }
   .tile:hover { transform: none; }
 }
+
+/* Selected impact */
+.impact { background: var(--dark); color: #fff; padding: clamp(3.5rem, 7vw, 5rem) 0; }
+.impact .eyebrow { color: #b9b9c4; }
+.impact__head { margin-bottom: 2rem; }
+.impact__list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1rem; }
+@media (max-width: 70rem) { .impact__list { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 46rem) { .impact__list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 30rem) { .impact__list { grid-template-columns: 1fr; } }
+.impact__list li { border-top: 2px solid #f2b33d; padding-top: 1rem; }
+.impact__list strong { display: block; font-family: var(--font-head); font-weight: 400; font-size: clamp(2.6rem, 5vw, 3.6rem); line-height: 1; margin-bottom: 0.6rem; color: #f2b33d; }
+.impact__list span { color: #d4d4dc; font-size: 0.95rem; line-height: 1.5; }
+
+/* Experience */
+.experience { padding: clamp(4rem, 8vw, 6rem) 0; border-top: 1px solid var(--line); }
+.experience__grid { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.6fr); gap: 2rem 4rem; }
+@media (max-width: 60rem) { .experience__grid { grid-template-columns: 1fr; } }
+.experience__intro { align-self: start; position: sticky; top: 6rem; }
+@media (max-width: 60rem) { .experience__intro { position: static; } }
+.experience__intro p { color: var(--muted); font-size: 1.1rem; }
+.roles { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.25rem; }
+.role { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: clamp(1.4rem, 3vw, 2rem); }
+.role__dates { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--link); margin-bottom: 0.4rem; }
+.role h3 { font-family: var(--font-head); font-weight: 400; font-size: clamp(1.7rem, 3vw, 2.2rem); margin-bottom: 0.8rem; }
+.role h3 span { display: block; font-family: var(--font-body); font-size: 1rem; font-weight: 600; color: var(--muted); margin-top: 0.3rem; }
+.role__summary { font-size: 1.05rem; }
+.role ul { margin: 0; padding-left: 1.2rem; color: var(--muted); }
+.role li { margin-bottom: 0.4rem; }
+.role--small h3 { font-size: 1.5rem; }
+.education { list-style: none; padding: 0 !important; }
+.education li { color: var(--ink); }
+.education span { display: block; color: var(--muted); font-size: 0.95rem; }
+
+/* Core expertise */
+.expertise { list-style: none; margin: 1.5rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.6rem; }
+@media (max-width: 60rem) { .expertise { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 30rem) { .expertise { grid-template-columns: 1fr; } }
+.expertise li { background: var(--dark); color: #fff; border-radius: 12px; padding: 0.8rem 1rem; font-weight: 500; }
+.toolkit__grid { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
+@media (max-width: 70rem) { .toolkit__grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; } }
+@media (max-width: 40rem) { .toolkit__grid { grid-template-columns: 1fr !important; } }
+.kit h3 { font-size: 1.45rem !important; }
+/* 7 tool groups: the last one spans 2 columns, so the grid has no empty slot */
+.toolkit__grid .kit:last-child:nth-child(odd) { grid-column: span 2; }
+@media (max-width: 40rem) { .toolkit__grid .kit:last-child:nth-child(odd) { grid-column: auto; } }

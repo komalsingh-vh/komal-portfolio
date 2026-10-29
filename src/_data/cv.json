@@ -1,0 +1,75 @@
+{
+  "headline": "Content design · UX writing · Content strategy · Information architecture",
+  "years": "5+",
+  "impact": [
+    { "value": "~18%", "label": "better task completion across priority journeys, through clearer UX copy, stronger structure and testing with users" },
+    { "value": "~15%", "label": "less journey drop-off and avoidable support contact, by simplifying guidance, calls to action and transactional content" },
+    { "value": "+12%", "label": "conversion on optimised e-commerce journeys at Time and Money, alongside around 20% more engagement with key content" },
+    { "value": "3+", "label": "product and service journeys using content style guides and reusable patterns I created" },
+    { "value": "25+", "label": "workshops, user interviews and content critiques facilitated, turned into prioritised improvements" }
+  ],
+  "roles": [
+    {
+      "title": "Content Designer",
+      "org": "Ministry of Justice",
+      "place": "London",
+      "dates": "December 2020 to July 2026",
+      "summary": "Owned content workstreams end to end on GOV.UK services, from discovery to delivery, working with design leads, interaction designers, user researchers, service designers and product owners.",
+      "points": [
+        "Planned and ran workshops, user interviews and content crits to understand user needs and test design decisions before build",
+        "Produced content style guides, content matrices, copy decks and UX copy, and co-authored design system documentation",
+        "Shaped the information architecture and content structure for each service, with content requirements that balanced business, technical and accessibility needs",
+        "Joined up service information, navigation, transactional guidance and support content into one approach across touchpoints",
+        "Designed to WCAG 2.2, the GOV.UK Design System and the GOV.UK style guide",
+        "Used research, analytics and performance data to find friction and improve content after release"
+      ]
+    },
+    {
+      "title": "Content Designer",
+      "org": "Time and Money",
+      "place": "London",
+      "dates": "September 2018 to November 2020",
+      "summary": "Designed content for e-commerce products and services, from product discovery and navigation to category pages, product pages, calls to action and checkout.",
+      "points": [
+        "Set content structure, taxonomy and reusable content patterns, with consistent terminology, style guidance and SEO-aware copy",
+        "Shaped narrative and content strategy across touchpoints from business and customer requirements",
+        "Ran user interviews, content critiques and working sessions with UX, product, SEO and client teams",
+        "Evaluated content with analytics, user research and A/B testing, and iterated on evidence",
+        "Supported product and feature launches from planning to release",
+        "Presented content thinking to clients and senior stakeholders, and built consensus across teams"
+      ]
+    }
+  ],
+  "community": [
+    "Contributed to community events and internal workshops to build content design practice across teams",
+    "Ran content crits and peer reviews that helped teams agree shared content standards",
+    "Created reusable guidance, templates and content patterns for colleagues in design, product and research"
+  ],
+  "expertise": [
+    "Content design and UX writing",
+    "Content strategy and content operations",
+    "Information architecture and structure",
+    "Plain language and GOV.UK",
+    "Accessibility and WCAG 2.2",
+    "Workshops, interviews and critiques",
+    "Design system documentation",
+    "Style guides, matrices and copy decks",
+    "Evidence-led iteration and testing",
+    "Stakeholder engagement",
+    "Research synthesis",
+    "Multi-disciplinary collaboration"
+  ],
+  "tools": [
+    { "group": "Design and collaboration", "items": ["Figma", "FigJam", "Miro", "Mural"] },
+    { "group": "Delivery and documentation", "items": ["Jira", "Confluence", "Microsoft Teams", "SharePoint", "Microsoft 365"] },
+    { "group": "Content and design systems", "items": ["CMS platforms", "Content modelling", "Content matrices", "Style guides", "Copy decks", "Design system documentation", "Storybook"] },
+    { "group": "Research and optimisation", "items": ["GA4", "Google Search Console", "Hotjar", "UserTesting", "Maze", "Optimal Workshop", "A/B testing"] },
+    { "group": "Accessibility and standards", "items": ["Plain language", "GOV.UK content principles", "GOV.UK Design System", "WCAG 2.2", "WAVE", "axe DevTools", "NVDA"] },
+    { "group": "SEO and quality", "items": ["Content audits", "Keyword research", "Readability", "Proofreading", "On-page SEO"] },
+    { "group": "AI-assisted workflows", "items": ["ChatGPT", "Microsoft Copilot", "Used for ideation, research synthesis and prototyping, always with human review"] }
+  ],
+  "education": [
+    { "title": "Bachelor's degree in Commerce", "org": "Osmania University", "detail": "Accounting, Economics and Business Management" },
+    { "title": "Diploma in Computer Application", "org": "", "detail": "" }
+  ]
+}

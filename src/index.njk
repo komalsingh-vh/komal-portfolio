@@ -3,39 +3,45 @@ layout: home.njk
 ---
 <section class="hero" aria-labelledby="intro-heading">
   <div class="wrap">
-    <span class="eyebrow">{{ site.name }} · {{ site.role }} · {{ site.location }}</span>
+    <span class="eyebrow">{{ cv.headline }}</span>
     <h1 id="intro-heading">Words that help people <em>get things done</em></h1>
     <div class="hero__row">
-      <p class="lede">I'm a content designer. I take complicated forms, dense guidance and inconsistent products, and turn them into words people understand and can act on the first time. Each project below shows the problem, the artefacts I made and the reasoning behind every decision.</p>
+      <p class="lede">I'm {{ site.name }}, a content designer in {{ site.location }} with {{ cv.years }} years' experience designing GOV.UK services at the Ministry of Justice and e-commerce journeys in retail. I work with interaction designers, user researchers and service designers from discovery to delivery, shaping structure, journeys and language.</p>
       <div>
         <ul class="swatches" aria-hidden="true">
           {%- for p in projects %}<li style="--bg: {{ p.tile.bg }}; --fg: {{ p.tile.accent }}">{{ loop.index }}</li>{% endfor %}
         </ul>
         <div class="buttons">
           <a class="button" href="#work">See the 6 projects</a>
-          <a class="button button--ghost" href="mailto:{{ site.email }}">Email me</a>
+          <a class="button button--ghost" href="#experience">My experience</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<div class="strip" aria-label="What the projects cover">
+<section class="impact" aria-labelledby="impact-heading">
   <div class="wrap">
-    <ul>
-      <li>Form design</li><li>Plain English</li><li>Multi-channel content</li><li>UX writing</li><li>Information architecture</li><li>Style guides</li>
+    <div class="impact__head">
+      <span class="eyebrow">Selected impact</span>
+      <h2 id="impact-heading">What clearer content changed</h2>
+    </div>
+    <ul class="impact__list">
+      {%- for i in cv.impact %}
+      <li><strong>{{ i.value }}</strong><span>{{ i.label }}</span></li>
+      {%- endfor %}
     </ul>
   </div>
-</div>
+</section>
 
 <section class="work" id="work" aria-labelledby="work-heading">
   <div class="wrap">
     <div class="work__head">
       <div>
-        <span class="eyebrow">Selected work</span>
+        <span class="eyebrow">Case studies</span>
         <h2 id="work-heading">Six projects, six problems</h2>
       </div>
-      <p>Each one is its own site, designed to suit its subject, from a council form to a gym app. Pick one to see the full case study.</p>
+      <p>These are self-initiated, so I can show the whole process, from the original content to every decision, artefact and check. Each one is its own site, designed to suit its subject.</p>
     </div>
     <ul class="tiles">
       {%- for p in projects %}
@@ -48,6 +54,40 @@ layout: home.njk
       </li>
       {%- endfor %}
     </ul>
+  </div>
+</section>
+
+<section class="experience" id="experience" aria-labelledby="experience-heading">
+  <div class="wrap experience__grid">
+    <div class="experience__intro">
+      <span class="eyebrow">Experience</span>
+      <h2 id="experience-heading">{{ cv.years }} years of content design</h2>
+      <p>From GOV.UK services used by the public to e-commerce journeys where every word affects conversion.</p>
+    </div>
+    <ol class="roles">
+      {%- for r in cv.roles %}
+      <li class="role">
+        <p class="role__dates">{{ r.dates }}</p>
+        <h3>{{ r.title }}<span>{{ r.org }}, {{ r.place }}</span></h3>
+        <p class="role__summary">{{ r.summary }}</p>
+        <ul>
+          {%- for pt in r.points %}<li>{{ pt }}</li>{% endfor %}
+        </ul>
+      </li>
+      {%- endfor %}
+      <li class="role role--small">
+        <h3>Community and practice</h3>
+        <ul>
+          {%- for c in cv.community %}<li>{{ c }}</li>{% endfor %}
+        </ul>
+      </li>
+      <li class="role role--small">
+        <h3>Education</h3>
+        <ul class="education">
+          {%- for e in cv.education %}<li><strong>{{ e.title }}</strong>{% if e.org %}, {{ e.org }}{% endif %}{% if e.detail %}<span>{{ e.detail }}</span>{% endif %}</li>{% endfor %}
+        </ul>
+      </li>
+    </ol>
   </div>
 </section>
 
@@ -75,31 +115,28 @@ layout: home.njk
         <a href="/touchpoints/">See it in the touchpoints project</a>
       </li>
       <li>
-        <h3>Check it against a standard</h3>
-        <p>I measure what can be measured: character limits, readability, accessibility. I design research for the rest, like card sorts and tree tests, before calling a structure finished.</p>
+        <h3>Decide with evidence</h3>
+        <p>Research, analytics and testing settle content decisions, not opinion. I measure what can be measured, and design research like card sorts and tree tests for the rest.</p>
         <a href="/navigation/">See it in the navigation project</a>
       </li>
     </ol>
   </div>
 </section>
 
-<section class="toolkit" aria-labelledby="toolkit-heading">
+<section class="toolkit" id="skills" aria-labelledby="toolkit-heading">
   <div class="wrap">
-    <span class="eyebrow">Toolkit</span>
-    <h2 id="toolkit-heading">Methods, artefacts and standards</h2>
+    <span class="eyebrow">Skills and tools</span>
+    <h2 id="toolkit-heading">Core expertise</h2>
+    <ul class="expertise">
+      {%- for e in cv.expertise %}<li>{{ e }}</li>{% endfor %}
+    </ul>
     <div class="toolkit__grid">
+      {%- for t in cv.tools %}
       <div class="kit">
-        <h3>Methods</h3>
-        <ul><li>Content audits</li><li>Question protocols</li><li>Content matrices</li><li>Card sorting</li><li>Tree testing</li><li>Highlighter tests</li><li>Readability measures</li></ul>
+        <h3>{{ t.group }}</h3>
+        <ul>{%- for i in t.items %}<li>{{ i }}</li>{% endfor %}</ul>
       </div>
-      <div class="kit">
-        <h3>Artefacts</h3>
-        <ul><li>Page-by-page flows</li><li>Error message sets</li><li>Copy decks</li><li>Microcopy inventories</li><li>Sitemaps</li><li>Terminology lists</li><li>Style guides</li><li>Prototypes</li></ul>
-      </div>
-      <div class="kit">
-        <h3>Standards</h3>
-        <ul><li>GOV.UK Design System</li><li>GOV.UK style guide</li><li>WCAG 2.2 AA</li><li>Plain English</li><li>Inclusive language</li></ul>
-      </div>
+      {%- endfor %}
     </div>
   </div>
 </section>
@@ -109,6 +146,6 @@ layout: home.njk
     <span class="eyebrow">Contact</span>
     <h2 id="contact-heading">Need words that <em>work</em>? Let's talk.</h2>
     <a class="contact__mail" href="mailto:{{ site.email }}">{{ site.email }}</a>
-    <p>I'm a content designer based in {{ site.location }}, open to roles and projects in content design and UX writing.</p>
+    <p>I'm a content designer based in {{ site.location }}, open to roles in content design, UX writing and content strategy.</p>
   </div>
 </section>
