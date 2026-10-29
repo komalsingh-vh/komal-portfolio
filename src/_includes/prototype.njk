@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en-GB" class="proto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }} – {{ prototype.service }} – Prototype</title>
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="/css/prototype.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  {# Base link for the script, so routes work when the site is published under a sub-folder #}
+  <a id="proto-root" href="{{ prototype.root }}" hidden tabindex="-1" aria-hidden="true"></a>
+
+  <header class="p-header">
+    <div class="p-width p-header-inner">
+      <span class="p-logo">Your council</span>
+      <a class="p-service" href="{{ prototype.root }}">{{ prototype.service }}</a>
+    </div>
+  </header>
+
+  <div class="p-width">
+    <div class="p-banner" role="region" aria-label="About this prototype">
+      <strong class="p-tag">Prototype</strong>
+      <span>This is not a real council service. Don't enter real personal details: your answers stay in this browser tab. <a href="{{ prototype.caseStudy }}">Back to the case study</a></span>
+    </div>
+
+    {% if backLink is defined %}<nav aria-label="Back"><a class="p-back" href="{{ prototype.root }}{{ backLink }}">Back</a></nav>{% endif %}
+
+    <main id="main" class="p-main" tabindex="-1">
+      <div class="p-col">
+        {{ content | safe }}
+      </div>
+    </main>
+  </div>
+
+  <footer class="p-footer">
+    <div class="p-width">
+      <p>A content design prototype by {{ site.name }}, based on GOV.UK Design System patterns. It isn't affiliated with any council or with GOV.UK.</p>
+    </div>
+  </footer>
+
+  <script src="/js/prototype.js"></script>
+</body>
+</html>

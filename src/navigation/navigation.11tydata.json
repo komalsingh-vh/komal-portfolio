@@ -1,0 +1,19 @@
+{
+  "layout": "portal.njk",
+  "portal": {
+    "theme": "wayfinding",
+    "mark": "→",
+    "name": "Navigation and labels",
+    "title": "Restructuring a GP surgery website around what patients came to do",
+    "description": "How Komal Singh restructured a GP surgery website's navigation: content inventory, sitemaps before and after, labelling rationale, and a card sort and tree test.",
+    "fonts": "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap",
+    "sections": [
+      { "id": "before", "text": "Before" },
+      { "id": "inventory", "text": "Inventory" },
+      { "id": "sitemaps", "text": "Sitemaps" },
+      { "id": "labels", "text": "Labels" },
+      { "id": "research", "text": "Card sort and tree test" },
+      { "id": "decisions", "text": "Decisions" }
+    ]
+  }
+}

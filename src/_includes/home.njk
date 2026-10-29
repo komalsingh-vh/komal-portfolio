@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ site.name }}, {{ site.role | lower }} in {{ site.location }}</title>
+  <meta name="description" content="{{ site.description }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  {# The home fonts, plus one display face from each portal so every tile looks like its project #}
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=DM+Serif+Display&family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Sora:wght@700&family=Archivo:wdth,wght@62..125,800&family=Space+Grotesk:wght@700&family=Fraunces:opsz,wght@9..144,600..700&display=swap">
+  <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="home-header">
+    <div class="wrap home-header__inner">
+      <a class="wordmark" href="/">{{ site.name }}</a>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="#work">Projects</a></li>
+          <li><a href="#approach">How I work</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    {{ content | safe }}
+  </main>
+
+  <footer class="home-footer">
+    <div class="wrap home-footer__inner">
+      <p>© {% year %} {{ site.name }}. {{ site.role }}, {{ site.location }}.</p>
+      <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+    </div>
+  </footer>
+</body>
+</html>

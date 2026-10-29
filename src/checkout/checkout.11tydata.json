@@ -1,0 +1,19 @@
+{
+  "layout": "portal.njk",
+  "portal": {
+    "theme": "shop",
+    "mark": "£",
+    "name": "Checkout microcopy",
+    "title": "Fixing the microcopy in an online checkout",
+    "description": "How Komal Singh rewrote every word in an online checkout: microcopy inventory, copy deck, error, empty and edge states, and annotated screens.",
+    "fonts": "https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;600&display=swap",
+    "sections": [
+      { "id": "screens", "text": "Before and after" },
+      { "id": "inventory", "text": "Inventory" },
+      { "id": "deck", "text": "Copy deck" },
+      { "id": "states", "text": "Error states" },
+      { "id": "decisions", "text": "Decisions" },
+      { "id": "results", "text": "Results" }
+    ]
+  }
+}

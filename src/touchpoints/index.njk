@@ -1,0 +1,373 @@
+---
+matrix:
+  - { ch: card, name: "Card through the door", trigger: "Driver can't deliver", need: "Where's my parcel right now?", message: "We tried to deliver. Your parcel is coming back tomorrow, with a neighbour, or at a pickup point", action: "Change the day or collect it", limit: "A5 card, ticked by hand", tone: "Calm, practical" }
+  - { ch: push, name: "App notification", trigger: "Same moment, if the app is installed", need: "What's happened?", message: "We couldn't deliver your parcel. We'll try again tomorrow", action: "Tap to change the day", limit: "Title about 30 characters, body under 100", tone: "Calm, short" }
+  - { ch: sms, name: "Text message", trigger: "Same moment, if there's no app", need: "Is this real, and what do I do?", message: "Who it's from, which parcel, when we'll try again", action: "A link to change the day or collect it", limit: "160 characters, GSM-7 only", tone: "Calm, short" }
+  - { ch: email, name: "Email", trigger: "Within 5 minutes", need: "What are all my options?", message: "What happened, when we'll try again, other options, the deadline", action: "Change delivery day button", limit: "Subject under 45 characters", tone: "Calm, helpful" }
+  - { ch: web, name: "Tracking page", trigger: "Any time, from any link", need: "Everything, in one place", message: "Status, next attempt, all options, pickup point details, deadline", action: "Change the day, collect it, choose a safe place", limit: "None, but key facts first", tone: "Calm, complete" }
+  - { ch: sms, name: "Reminder text", trigger: "2 days before it goes back", need: "Am I about to lose it?", message: "The date it goes back, and where and when to collect it", action: "Collect it, with photo ID", limit: "160 characters, GSM-7 only", tone: "Direct, specific, still calm" }
+terms:
+  - [ "parcel", "item, package, shipment, consignment", "What people call it. “Consignment” is courier language" ]
+  - [ "pickup point", "depot, ParcelShop, Access Point, collection location", "One name, so people know it's the same place in every message" ]
+  - [ "tracking number", "consignment number, reference, barcode number", "Matches what retailers call it in their emails" ]
+  - [ "change delivery day", "reschedule, rearrange redelivery, amend", "Says exactly what you can do" ]
+  - [ "try again", "reattempt, redeliver", "Plain, and works in every sentence" ]
+  - [ "collect", "pick up, retrieve", "“Pick up” can mean the driver collecting from you" ]
+  - [ "safe place", "leave-safe, SafeDrop", "No brand names for features" ]
+  - [ "send it back to Brightwear", "return to sender, RTS", "Names who gets it, so people know they'll be refunded by the seller" ]
+  - [ "photo ID", "valid ID, proof of identification", "Shorter, and says what kind" ]
+  - [ "Thursday 14 November (Thu 14 Nov in texts)", "14/11, within 3 working days", "A real date, never a calculation" ]
+  - [ "9am to 1pm (9am-1pm in texts)", "09:00-13:00, AM slot", "How people say times" ]
+---
+<div id="top"></div>
+
+<section class="hero" aria-labelledby="title">
+  <div class="wrap hero__grid">
+    <div>
+      <p class="eyebrow">Content design case study · Multi-channel content</p>
+      <h1 id="title">One missed delivery. Six messages. <span class="lime">One story.</span></h1>
+      <p class="lede">When a parcel can't be delivered, people hear about it on a card, a notification, a text, an email and a tracking page. I rewrote all of them so they say the same thing, in the same words, within each channel's limits.</p>
+      <ul class="chips" aria-label="Skills shown">
+        <li>Content matrix</li><li>Message hierarchy</li><li>Terminology</li><li>Tone of voice</li><li>Character limits</li>
+      </ul>
+      <div class="button-row">
+        <a class="button" href="#after">See the rewrites</a>
+        <a class="button button--ghost" href="#moment">Read the case study</a>
+      </div>
+    </div>
+    <div class="collage" aria-hidden="true">
+      <div class="lock">
+        <div class="lock__time">10:43</div>
+        <div class="lock__date">Wednesday 13 November</div>
+        <div class="notif"><div class="notif__app"><span>Northlane</span><span>now</span></div><strong>We couldn't deliver your parcel</strong>Brightwear parcel. We'll try again tomorrow, 9am to 1pm. Tap to change the day.</div>
+      </div>
+      <div class="sms float-sms"><div class="sms__from">Northlane</div><div class="sms__bubble">Northlane: We couldn't deliver your Brightwear parcel. We'll try again Thu 14 Nov, 9am-1pm. To change the day or collect it: nlparcels.example/8KD2</div></div>
+      <div class="mail float-mail"><div class="mail__head"><div class="mail__from">Northlane Parcels</div><div class="mail__subject">We couldn't deliver your Brightwear parcel</div><div class="mail__pre">We'll try again tomorrow, Thursday, between 9am and 1pm</div></div></div>
+      <div class="doorcard float-card"><div class="doorcard__title">We tried to deliver your parcel</div><ul><li class="ticked">Coming back tomorrow</li><li>With your neighbour</li><li>At a pickup point</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="band band--tight" aria-label="Project summary">
+  <div class="wrap">
+    <dl class="meta">
+      <div><dt>My role</dt><dd>Content designer, self-initiated</dd></div>
+      <div><dt>Scenario</dt><dd>A failed parcel delivery, for a fictional courier</dd></div>
+      <div><dt>Made</dt><dd>Content matrix, hierarchy, terminology list, 6 rewrites</dd></div>
+      <div><dt>Channels</dt><dd>Card, app, text, email, web</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="band band--brand" aria-labelledby="numbers">
+  <div class="wrap">
+    <h2 id="numbers" class="visually-hidden">Results at a glance</h2>
+    <ul class="stats">
+      <li class="stat"><span class="stat__value">4 → 1</span><span class="stat__label">texts to send the first message. It now fits in one</span></li>
+      <li class="stat"><span class="stat__value">76 → 42</span><span class="stat__label">characters in the email subject, so it isn't cut off on a phone</span></li>
+      <li class="stat"><span class="stat__value">4 → 1</span><span class="stat__label">names for the place you collect a parcel</span></li>
+      <li class="stat"><span class="stat__value">11</span><span class="stat__label">terms in the terminology list every channel follows</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="band" id="moment" aria-labelledby="moment-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">The moment</span>
+      <h2 id="moment-title">10:42am, Wednesday. Nobody's home.</h2>
+      <p>A driver can't deliver a parcel from an online shop. Over the next week, the person it's for hears about it in up to 6 different places, often while they're at work, on a bus or half-reading a lock screen.</p>
+    </div>
+    <div class="grid grid--2" style="margin-bottom:3rem">
+      <div class="card card--soft">
+        <p class="need-label">User need</p>
+        <p class="need">“Tell me what's happened, what I need to do, and by when, wherever I see it.”</p>
+      </div>
+      <div class="card card--soft">
+        <p class="need-label">Business need</p>
+        <p class="need">Fewer failed second deliveries, fewer parcels sent back, and fewer calls asking “what does this mean?”</p>
+      </div>
+    </div>
+    <ol class="moment">
+      <li><time>Wed 10:42am</time><p>Driver can't deliver</p><span class="chs"><span class="ch ch--card">Card</span><span class="ch ch--push">App</span><span class="ch ch--sms">Text</span></span></li>
+      <li><time>Wed 10:47am</time><p>Full details follow</p><span class="chs"><span class="ch ch--email">Email</span><span class="ch ch--web">Tracking page</span></span></li>
+      <li><time>Thu 14 Nov</time><p>Second try fails, parcel goes to a pickup point</p><span class="chs"><span class="ch ch--sms">Text</span><span class="ch ch--email">Email</span></span></li>
+      <li><time>Mon 18 Nov</time><p>2 days before it goes back to the shop</p><span class="chs"><span class="ch ch--sms">Reminder text</span></span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="band band--surface" id="before" aria-labelledby="before-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">The before</span>
+      <h2 id="before-title">Every message told a different story</h2>
+      <p>The before messages are a composite, written from patterns that are common in UK couriers' failed-delivery messages, for a fictional courier called Northlane.</p>
+    </div>
+    <div class="grid grid--2">
+      <div class="card">
+        <p class="pair__label"><span class="ch ch--sms">Text</span></p>
+        <div class="sms"><div class="sms__from">NL-PARCEL</div><div class="sms__bubble">NORTHLANE: Your item couldn’t be delivered today as no-one was home. A card has been left. Please click here https://nl-track.example/xK9pQ2rT to arrange redelivery or collect from your local ParcelShop within 7 days.</div><div class="sms__meta"><span class="count count--bad">217 characters</span><span class="count count--bad">4 texts, because of one curly apostrophe</span></div></div>
+        <ul class="touchpoint__notes"><li>Doesn't say which parcel, or which shop it's from</li><li>“Click here” and a long random link look like a scam</li><li>“Within 7 days” of what? No actual date</li></ul>
+      </div>
+      <div class="card">
+        <p class="pair__label"><span class="ch ch--push">App notification</span></p>
+        <div class="stage"><div class="notif"><div class="notif__app"><span>Northlane</span><span>now</span></div><strong>Delivery Exception!</strong>Your shipment status has been updated. Tap for details.</div></div>
+        <ul class="touchpoint__notes"><li>“Delivery exception” is courier jargon</li><li>The only line people see on a lock screen says nothing</li><li>An exclamation mark makes a routine event sound alarming</li></ul>
+      </div>
+      <div class="card">
+        <p class="pair__label"><span class="ch ch--email">Email</span></p>
+        <div class="mail"><div class="mail__head"><div class="mail__from">noreply@nl-notifications.example</div><div class="mail__subject">Northlane Delivery Notification - Consignment NL4482019573GB - Status Update</div></div><div class="mail__body"><p>Dear Customer, we attempted delivery of your consignment today. Please allow 24 hours before collecting from your nearest Access Point. Click here to view your options.</p></div></div>
+        <ul class="touchpoint__notes"><li>The subject is 76 characters: on a phone, people see “Northlane Delivery Notification - Consi...”</li><li>Now it's an “Access Point”, not a “ParcelShop”</li><li>When does the 24 hours start?</li></ul>
+      </div>
+      <div class="card">
+        <p class="pair__label"><span class="ch ch--card">Card through the door</span></p>
+        <div class="doorcard"><div class="doorcard__title">Sorry we missed you!</div><p>Your item has been:</p><ul><li class="ticked">Taken back to the depot</li><li>Left with neighbour</li></ul><div class="doorcard__foot">Quote ref and allow 1 working day. Charges may apply for redelivery.</div></div>
+        <ul class="touchpoint__notes"><li>The “depot” is a 4th name for the same place</li><li>“Quote ref”: which ref, where?</li><li>“Charges may apply” worries people and isn't explained</li></ul>
+      </div>
+    </div>
+    <div class="card card--brand" style="margin-top:1.5rem">
+      <h3>The same place had 4 names</h3>
+      <p style="color:inherit;opacity:.85">ParcelShop in the text, Access Point in the email, depot on the card and collection location on the tracking page. People reasonably wondered if their parcel was in 4 different places.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="matrix" aria-labelledby="matrix-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Artefact 1 · Content matrix</span>
+      <h2 id="matrix-title">What each channel is for</h2>
+      <p>One row per touchpoint. The matrix made it clear that each channel has a different job: the lock screen tells you something happened, the text proves it's real and gives the next step, and the tracking page holds everything.</p>
+    </div>
+    <div class="table-wrap" role="region" aria-label="Content matrix" tabindex="0">
+      <table class="data-table">
+        <caption>6 touchpoints for one failed delivery</caption>
+        <thead><tr><th scope="col">Touchpoint</th><th scope="col">Trigger</th><th scope="col">User need</th><th scope="col">Key message</th><th scope="col">Action</th><th scope="col">Limit</th><th scope="col">Tone</th></tr></thead>
+        <tbody>
+          {%- for m in matrix %}
+          <tr><th scope="row"><span class="ch ch--{{ m.ch }}">{{ m.name }}</span></th><td>{{ m.trigger }}</td><td>{{ m.need }}</td><td>{{ m.message }}</td><td>{{ m.action }}</td><td>{{ m.limit }}</td><td>{{ m.tone }}</td></tr>
+          {%- endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="band band--brand" id="hierarchy" aria-labelledby="hierarchy-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Artefact 2 · Message hierarchy</span>
+      <h2 id="hierarchy-title">What every channel must say, and what can wait</h2>
+      <p>If someone only ever sees one message, it must still tell them what happened and what happens next.</p>
+    </div>
+    <ol class="tiers">
+      <li class="tier"><span class="tier__n">1</span><div><h3>Every channel: what happened, and what happens next</h3><p>We couldn't deliver your Brightwear parcel. We'll try again Thursday, 9am to 1pm.</p></div></li>
+      <li class="tier"><span class="tier__n">2</span><div><h3>Most channels: what you can do, and by when</h3><p>Change the day or collect it. The last day you can collect it.</p></div></li>
+      <li class="tier"><span class="tier__n">3</span><div><h3>Tracking page only: the details</h3><p>Pickup point opening hours and map, what ID to bring, safe place and neighbour options, and how to spot a scam message.</p></div></li>
+    </ol>
+    <div class="table-wrap coverage" role="region" aria-label="Which channel says what" tabindex="0" style="margin-top:2.5rem">
+      <table class="data-table">
+        <caption>Which channel carries each level</caption>
+        <thead><tr><th scope="col">Level</th><th scope="col">Card</th><th scope="col">App</th><th scope="col">Text</th><th scope="col">Email</th><th scope="col">Tracking page</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">1. What happened, what's next</th><td class="yes">Yes</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
+          <tr><th scope="row">2. What you can do, by when</th><td class="yes">Yes</td><td class="link">Link</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
+          <tr><th scope="row">3. The details</th><td class="link">Link</td><td class="link">Link</td><td class="link">Link</td><td class="yes">Some</td><td class="yes">Yes</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="band band--surface" id="after" aria-labelledby="after-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Artefact 3 · The rewrites</span>
+      <h2 id="after-title">Each message, written to its channel</h2>
+      <p>Same facts, same words, same order of importance. What changes is how much fits, and what comes first.</p>
+    </div>
+
+    <article class="touchpoint">
+      <div class="touchpoint__head"><span class="ch ch--push">App notification</span><h3>Says it all in the line people actually see</h3></div>
+      <div class="pair">
+        <div class="stage"><div class="notif"><div class="notif__app"><span>Northlane</span><span>now</span></div><strong>We couldn't deliver your parcel</strong>Brightwear parcel. We'll try again tomorrow, 9am to 1pm. Tap to change the day.</div><div class="sms__meta"><span class="count count--good">Title: 31 characters</span><span class="count count--good">Body: 79 characters</span></div></div>
+        <ul class="touchpoint__notes"><li>A lock screen shows about one line, so the title alone says what happened</li><li>“Tomorrow” works here because a notification is read when it arrives. Texts and emails use the date</li><li>“Tap to change the day” says what tapping does, instead of “Tap for details”</li></ul>
+      </div>
+    </article>
+
+    <article class="touchpoint">
+      <div class="touchpoint__head"><span class="ch ch--sms">Text message</span><h3>One text, that looks like it's really from the courier</h3></div>
+      <div class="pair">
+        <div class="sms"><div class="sms__from">Northlane</div><div class="sms__bubble">Northlane: We couldn't deliver your Brightwear parcel. We'll try again Thu 14 Nov, 9am-1pm. To change the day or collect it: nlparcels.example/8KD2</div><div class="sms__meta"><span class="count count--good">147 characters</span><span class="count count--good">1 text</span></div></div>
+        <ul class="touchpoint__notes"><li>Starts with the courier's name, because people decide in a second whether a text is real</li><li>Names the shop, Brightwear. A scammer guessing at random can't</li><li>Straight apostrophes only. One curly apostrophe or emoji switches the whole text to a format with 70 characters per message</li><li>A short link on the courier's own domain, never a link shortener</li></ul>
+      </div>
+    </article>
+
+    <article class="touchpoint">
+      <div class="touchpoint__head"><span class="ch ch--email">Email</span><h3>All the options, with the most likely one first</h3></div>
+      <div class="pair">
+        <div class="mail">
+          <div class="mail__head"><div class="mail__from">Northlane Parcels</div><div class="mail__subject">We couldn't deliver your Brightwear parcel</div><div class="mail__pre">We'll try again tomorrow, Thursday, between 9am and 1pm</div></div>
+          <div class="mail__body">
+            <p>We tried to deliver your parcel from Brightwear at 10:42am today, but no one was in.</p>
+            <p><strong>We'll try again tomorrow, Thursday 14 November, between 9am and 1pm.</strong></p>
+            <span class="mail__button">Change delivery day</span>
+            <p>You can also collect it from Ash Road Stores, 12 Ash Road, LS6 2AB, from 4pm today, or choose a safe place to leave it.</p>
+            <p>If we can't deliver it tomorrow, you can collect it until Tuesday 19 November. After that, we'll send it back to Brightwear.</p>
+            <p class="mail__small">Tracking number: NL 4482 0195 73<br>We'll never ask you to pay to change a delivery. If a message asks you to pay, it isn't from us. Forward scam texts to 7726.</p>
+          </div>
+        </div>
+        <ul class="touchpoint__notes"><li>Subject: 42 characters, so phones show all of it</li><li>The preview text answers the next question, “so what now?”</li><li>One button for the most common action. Other options are plain sentences, so they don't compete</li><li>The scam warning lives here and on the tracking page, where there's room to explain it</li></ul>
+      </div>
+    </article>
+
+    <article class="touchpoint">
+      <div class="touchpoint__head"><span class="ch ch--card">Card through the door</span><h3>A driver can complete it in 10 seconds</h3></div>
+      <div class="pair">
+        <div class="doorcard">
+          <div class="doorcard__title">We tried to deliver your parcel</div>
+          <p>From: <span class="hand">Brightwear</span> &nbsp; Today at <span class="hand">10:42am</span></p>
+          <p><strong>Your parcel is:</strong></p>
+          <ul><li class="ticked">coming back tomorrow, 9am to 1pm</li><li>with your neighbour at number ____</li><li>at our pickup point: ______________</li></ul>
+          <div class="doorcard__foot">To change the day or collect it, go to nlparcels.example or call 0306 999 0123.<br>Tracking number: <span class="hand">NL 4482 0195 73</span><br>To collect it, bring this card and photo ID.</div>
+        </div>
+        <ul class="touchpoint__notes"><li>The heading is a fact, not an apology. “Sorry we missed you” doesn't say where the parcel is</li><li>Three tick boxes cover every outcome, so the driver writes almost nothing</li><li>No “charges may apply”. If there's no charge, don't hint at one</li><li>A short web address people can type, because you can't tap paper</li></ul>
+      </div>
+    </article>
+
+    <article class="touchpoint">
+      <div class="touchpoint__head"><span class="ch ch--web">Tracking page</span><h3>Everything, with the answer at the top</h3></div>
+      <div class="browser">
+        <div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span class="browser__url">nlparcels.example/8KD2</span></div>
+        <div class="browser__body track">
+          <h4>We couldn't deliver your parcel</h4>
+          <p>From Brightwear · Tracking number NL 4482 0195 73</p>
+          <ol class="track__status" aria-label="Delivery progress">
+            <li class="done">Ordered from Brightwear, Monday 11 November</li>
+            <li class="done">Out for delivery, Wednesday 13 November, 7:15am</li>
+            <li class="now">We tried to deliver it at 10:42am, but no one was in</li>
+            <li>Next: we'll try again Thursday 14 November, 9am to 1pm</li>
+          </ol>
+          <div class="track__actions" aria-label="Options"><span>Change delivery day</span><span>Collect it instead</span><span>Choose a safe place</span></div>
+          <div class="grid grid--2">
+            <div><h5 style="font-size:1rem">Collecting it</h5><p>Ash Road Stores, 12 Ash Road, LS6 2AB. Open every day, 7am to 9pm. From 4pm today. Bring photo ID, like a driving licence or passport.</p></div>
+            <div><h5 style="font-size:1rem">How long we'll keep it</h5><p>Until Tuesday 19 November. After that, we'll send it back to Brightwear, and they'll contact you about a refund.</p></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="touchpoint">
+      <div class="touchpoint__head"><span class="ch ch--sms">Follow-up texts</span><h3>Good news and bad news, in the same voice</h3></div>
+      <div class="pair">
+        <div>
+          <p class="pair__label">Ready to collect</p>
+          <div class="sms"><div class="sms__bubble">Northlane: Your Brightwear parcel is ready to collect from Ash Road Stores, 12 Ash Road, LS6 2AB. Bring photo ID. Open 7am-9pm. nlparcels.example/8KD2</div><div class="sms__meta"><span class="count count--good">150 characters</span><span class="count count--good">1 text</span></div></div>
+        </div>
+        <div>
+          <p class="pair__label">Reminder, 2 days before it goes back</p>
+          <div class="sms"><div class="sms__bubble">Northlane: Your Brightwear parcel goes back to them on Wed 20 Nov. Collect it from Ash Road Stores, 12 Ash Road, LS6 2AB, by 9pm Tue 19 Nov. Bring photo ID.</div><div class="sms__meta"><span class="count count--good">156 characters</span><span class="count count--good">1 text</span></div></div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="band" id="terms" aria-labelledby="terms-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Artefact 4 · Terminology list</span>
+      <h2 id="terms-title">One name for each thing, everywhere</h2>
+      <p>The list every message, template and script follows. If a word isn't on it, the writer checks before inventing a new one.</p>
+    </div>
+    <div class="table-wrap" role="region" aria-label="Terminology list" tabindex="0">
+      <table class="data-table">
+        <thead><tr><th scope="col">Use</th><th scope="col">Don't use</th><th scope="col">Why</th></tr></thead>
+        <tbody>
+          {%- for t in terms %}
+          <tr><td><strong>{{ t[0] }}</strong></td><td>{{ t[1] }}</td><td>{{ t[2] }}</td></tr>
+          {%- endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="band band--soft" id="decisions" aria-labelledby="decisions-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Content decisions</span>
+      <h2 id="decisions-title">Why each channel says what it says</h2>
+    </div>
+    <div class="grid grid--2">
+      <article class="card">
+        <span class="card__num">1</span>
+        <h3>What comes first depends on what people see first</h3>
+        <p>On a lock screen, it's one line, so the title says what happened. In a text, it's the sender, so the courier's name comes first. In an inbox, it's the subject. On the card, it's the heading and the ticked box.</p>
+      </article>
+      <article class="card">
+        <span class="card__num">2</span>
+        <h3>Leave it out if another channel does it better</h3>
+        <p>Opening hours, ID rules and safe place options were cut from the text and the notification. They live on the tracking page, where there's room. Every short message links there.</p>
+      </article>
+      <article class="card">
+        <span class="card__num">3</span>
+        <h3>Links that make sense out of context</h3>
+        <p>Every call to action says what it does, because people meet them alone on a small screen.</p>
+        <div class="ba"><p class="ba__side ba__before"><span>Before</span>Click here / Tap for details</p><span class="ba__arrow" aria-hidden="true">→</span><p class="ba__side ba__after"><span>After</span>Change delivery day / Tap to change the day</p></div>
+      </article>
+      <article class="card">
+        <span class="card__num">4</span>
+        <h3>Written to look real, in a world of scam texts</h3>
+        <p>Fake delivery texts are a common scam in the UK. The real one names the courier first, names the shop, gives a specific date, and uses a short link on the courier's own domain. The email and tracking page say what the courier will never ask for.</p>
+      </article>
+      <article class="card">
+        <span class="card__num">5</span>
+        <h3>Real dates, never sums</h3>
+        <p>“Within 7 days” makes people work out a date, and they don't know when the count starts. Every message gives the actual day. Short channels use “Thu 14 Nov”, long ones “Thursday 14 November”.</p>
+      </article>
+      <article class="card">
+        <span class="card__num">6</span>
+        <h3>Tone: urgency comes from facts, not capitals</h3>
+        <p>The reminder is the most urgent message, but it uses the same calm voice. It's direct and puts the deadline first. There are no capital letters, exclamation marks or “URGENT”, which are also signs of a scam.</p>
+        <div class="ba"><p class="ba__side ba__before"><span>Before</span>FINAL NOTICE! Your item will be returned!</p><span class="ba__arrow" aria-hidden="true">→</span><p class="ba__side ba__after"><span>After</span>Your Brightwear parcel goes back to them on Wed 20 Nov.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="results" aria-labelledby="results-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">How I checked it</span>
+      <h2 id="results-title">Counted, not estimated</h2>
+    </div>
+    <ul class="checks">
+      <li><div><strong>Character counts</strong><span>Every text, notification and subject line counted with a script, which also checks the text encoding.</span></div></li>
+      <li><div><strong>One text each</strong><span>All 3 texts fit in a single message, using only standard GSM-7 characters.</span></div></li>
+      <li><div><strong>Same words everywhere</strong><span>Every rewrite checked against the terminology list, with no exceptions.</span></div></li>
+      <li><div><strong>Out of context</strong><span>Each message read on its own still says what happened and what to do next.</span></div></li>
+    </ul>
+    <div class="grid grid--2" style="margin-top:3rem">
+      <div class="card card--soft">
+        <h3>How I'd test it with people</h3>
+        <p>Show people one message at a time, like a real lock screen or a text among others, and ask: what's happened, what would you do, and do you trust it? I'd mix in a realistic scam text, to check the real one is easy to tell apart.</p>
+      </div>
+      <div class="card card--soft">
+        <h3>What I'd do next</h3>
+        <p>Write the templates for the other delivery moments, like “delivered to a safe place” and “delayed”, using the same terminology list. Then write the script call centre staff use, so the phone says the same as everything else.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band band--surface band--tight" aria-label="More projects">
+  <div class="wrap next">
+    <div>
+      <span class="eyebrow">Next project</span>
+      <h2>Fixing the microcopy in an online checkout</h2>
+    </div>
+    <a class="button" href="/checkout/">See the checkout project</a>
+  </div>
+</section>

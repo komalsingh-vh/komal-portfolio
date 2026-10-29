@@ -1,0 +1,363 @@
+---
+inventory:
+  - [ "Practice staff", "About Us", "Who will I see?", "OK", "keep", "Keep", "About the surgery › Our team" ]
+  - [ "Practice policies", "About Us", "Rarely needed", "OK", "move", "Merge", "About the surgery › Policies and privacy" ]
+  - [ "Opening times", "About Us", "When can I call?", "Duplicate of Contact Us", "move", "Merge", "Contact and opening times" ]
+  - [ "Patient Participation Group", "About Us", "Have a say", "OK", "keep", "Keep", "About the surgery › Patient group" ]
+  - [ "Friends and Family Test", "About Us", "Give feedback", "Overlaps with Comments & Complaints", "move", "Merge", "About the surgery › Feedback and complaints" ]
+  - [ "News", "About Us", "What's changed?", "Last updated 2022", "cut", "Cut", "Current notices go on the home page" ]
+  - [ "Careers", "About Us", "Work here", "OK", "keep", "Keep", "About the surgery › Jobs" ]
+  - [ "Appointments", "Patient Services", "See a GP", "Top task, 2 clicks deep", "move", "Move up", "Appointments" ]
+  - [ "Repeat Prescriptions", "Patient Services", "Order my medicine", "Top task, 2 clicks deep", "move", "Move up", "Prescriptions" ]
+  - [ "Test Results", "Patient Services", "Get my results", "OK", "move", "Move", "Test results and letters" ]
+  - [ "Home Visits", "Patient Services", "Get a visit at home", "OK", "move", "Move", "Appointments › Home visits" ]
+  - [ "Clinics", "Patient Services", "Find a clinic", "Vague label", "change", "Rewrite", "Vaccinations and clinics" ]
+  - [ "Travel vaccinations", "Patient Services", "Jabs before a trip", "Split from other vaccinations", "move", "Move", "Vaccinations and clinics" ]
+  - [ "Sick notes", "Patient Services", "Note for my employer", "Old name: fit notes replaced sick notes in 2010", "change", "Rewrite", "Test results and letters › Fit notes" ]
+  - [ "Non-NHS services", "Patient Services", "Letter for insurance or a form", "Label means nothing to patients", "change", "Rewrite", "Test results and letters › Letters, forms and fees" ]
+  - [ "New patients", "Information", "Join the surgery", "Duplicate of the form under Resources", "move", "Merge", "Register with us" ]
+  - [ "Practice leaflet (PDF)", "Information", "General information", "PDF from 2019, out of date", "cut", "Cut", "Its content now lives on the right pages" ]
+  - [ "Out of hours", "Information", "Help when you're closed", "Urgent, but buried", "move", "Move up", "Appointments › When we're closed, and every page footer" ]
+  - [ "Carers", "Information", "Support as a carer", "OK", "move", "Move", "Health advice and support" ]
+  - [ "Comments & Complaints", "Information", "Complain", "OK", "move", "Merge", "About the surgery › Feedback and complaints" ]
+  - [ "Privacy notice", "Information", "How my data is used", "OK", "move", "Move", "Footer, and About the surgery › Policies and privacy" ]
+  - [ "Accessibility statement", "Information", "Legal requirement", "OK", "move", "Move", "Footer" ]
+  - [ "Chaperones", "Information", "Bring or ask for a chaperone", "Found away from booking", "move", "Move", "Appointments › Book an appointment" ]
+  - [ "Health A-Z", "Resources", "Look up a condition", "Duplicates the NHS website", "cut", "Cut", "One link to the NHS website" ]
+  - [ "Self-help", "Resources", "Treat a minor illness", "OK", "move", "Move", "Health advice and support" ]
+  - [ "Online services", "Resources", "Use the NHS App", "Repeated under Appointments", "move", "Merge", "Inside Appointments and Prescriptions, where it's used" ]
+  - [ "Forms", "Resources", "Download a form", "A grab-bag of unrelated forms", "change", "Split", "Each form moves to the task it's for" ]
+  - [ "Leaflets", "Resources", "Read about a condition", "6 of 14 out of date", "change", "Rewrite", "Health advice and support, 8 current leaflets" ]
+  - [ "Useful numbers", "Resources", "Find a phone number", "OK", "move", "Move", "Health advice and support" ]
+  - [ "Subject access request", "Resources › Forms", "See my medical record", "Legal jargon as the page title", "change", "Rewrite", "Test results and letters › Your medical record" ]
+  - [ "Contact Us", "Top menu", "Call or visit", "Opening times on a different page", "move", "Merge", "Contact and opening times" ]
+labels:
+  - [ "Appointments", "Patient services, Book online, See a GP", "The word people use and search for. “Patient services” describes the whole website" ]
+  - [ "Prescriptions", "Repeat prescriptions, Medicines, Medication", "Short, and covers repeats and questions. “Medicines” sounds like health information" ]
+  - [ "Test results and letters", "Results, Documents, Paperwork", "Groups the things people get from the surgery: results, fit notes, letters and records" ]
+  - [ "Vaccinations and clinics", "Clinics, Jabs, Immunisations", "“Clinics” alone was vague. “Vaccinations” is the NHS website's word. Pages also say “jab”, which people search for" ]
+  - [ "Register with us", "New patients, Join the practice, Registration", "A task, not a group of people. Someone moving house doesn't think of themselves as a patient yet" ]
+  - [ "Health advice and support", "Resources, Information, Self-help", "Says what's inside. “Resources” and “Information” could hold anything, and did" ]
+  - [ "Contact and opening times", "Contact us, Find us", "Opening times are one of the most looked-for things, so they're in the label" ]
+  - [ "About the surgery", "About us, Practice information", "Kept for team, policies and feedback, the things people expect under “About”" ]
+cards: [ "Book a GP appointment", "Cancel an appointment", "Ask for a home visit", "Get help when the surgery is closed", "Order a repeat prescription", "Change which pharmacy gets my prescription", "Get blood test results", "Get a note for my employer", "Ask for a letter for my insurance", "See my medical record", "Book a flu jab", "Get vaccinations before travelling", "Baby and child check-ups", "Asthma and diabetes reviews", "Join the surgery", "Check if I live in the area", "Change my address or phone number", "Support for carers", "Treat a cold at home", "Find a pharmacy", "Useful phone numbers", "Meet the doctors and nurses", "Make a complaint", "Give feedback", "Join the patient group", "How my data is used", "Opening times", "Find the surgery", "Jobs at the surgery", "Bring someone with me to an appointment" ]
+tasks:
+  - { q: "You need to see a GP this week about a painful knee. Where would you go?", path: "Appointments › Book an appointment" }
+  - { q: "Where would you go to book a flu jab?", path: "Vaccinations and clinics › Flu and COVID vaccinations" }
+  - { q: "You're running low on your blood pressure tablets.", path: "Prescriptions › Order a repeat prescription" }
+  - { q: "Your employer needs a note saying you were too ill to work.", path: "Test results and letters › Fit notes" }
+  - { q: "You've just moved to the area and want to join the surgery.", path: "Register with us" }
+  - { q: "It's 9pm on Saturday and your child has a high temperature.", path: "Appointments › When we're closed" }
+  - { q: "Your travel insurer wants a letter from your doctor.", path: "Test results and letters › Letters, forms and fees" }
+  - { q: "You want to complain about a referral that never happened.", path: "About the surgery › Feedback and complaints" }
+---
+<div id="top"></div>
+
+<section class="hero" aria-labelledby="title">
+  <div class="wrap hero__grid">
+    <div>
+      <p class="eyebrow">Content design case study · Information architecture</p>
+      <h1 id="title">Where would you click to <span class="tangerine">book a flu jab?</span></h1>
+      <p class="lede">A GP surgery website organised around how the surgery runs, not what patients come to do. I rebuilt the menu around patients' tasks and renamed every label they couldn't predict.</p>
+      <ul class="chips" aria-label="Skills shown">
+        <li>Content inventory</li><li>Sitemaps</li><li>Labelling</li><li>Card sorting</li><li>Tree testing</li>
+      </ul>
+      <div class="button-row">
+        <a class="button" href="#sitemaps">See the new structure</a>
+        <a class="button button--ghost" href="#before">Read the case study</a>
+      </div>
+    </div>
+    <div class="signs" aria-hidden="true">
+      <p class="sign-task">Book a flu jab</p>
+      <div class="sign sign--old">
+        <span class="sign__label">Before: 5 menu items</span>
+        <ul><li class="vague">About Us</li><li class="vague">Patient Services</li><li class="vague">Information</li><li class="vague">Resources</li><li>Contact Us</li></ul>
+      </div>
+      <div class="sign sign--new">
+        <span class="sign__label">After: named after tasks</span>
+        <ul><li>Appointments</li><li>Prescriptions</li><li>Test results and letters</li><li>Vaccinations and clinics</li><li>Register with us</li><li>Health advice and support</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band band--tight" aria-label="Project summary">
+  <div class="wrap">
+    <dl class="meta">
+      <div><dt>My role</dt><dd>Content designer, self-initiated</dd></div>
+      <div><dt>Website</dt><dd>Hollin Lane Surgery, a fictional GP practice</dd></div>
+      <div><dt>Made</dt><dd>Inventory, sitemaps, labelling rationale, research plan</dd></div>
+      <div><dt>Methods</dt><dd>Open card sort, tree test</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="band band--brand" aria-labelledby="numbers">
+  <div class="wrap">
+    <h2 id="numbers" class="visually-hidden">Results at a glance</h2>
+    <ul class="stats">
+      <li class="stat"><span class="stat__value">31</span><span class="stat__label">pages in the content inventory</span></li>
+      <li class="stat"><span class="stat__value">4 → 0</span><span class="stat__label">top-level labels that could hold anything, like “Resources”</span></li>
+      <li class="stat"><span class="stat__value">7</span><span class="stat__label">duplicate pages merged into the page they repeated</span></li>
+      <li class="stat"><span class="stat__value">2 → 1</span><span class="stat__label">clicks to book an appointment or order a prescription</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="brief">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">The brief</span>
+      <h2 id="brief">Built around the surgery, not the patient</h2>
+      <p>Small organisations often build their menu around how they're run. GP surgery websites are a clear example: “Patient Services”, “Information” and “Resources” each hold a mix of unrelated pages, and patients have to guess.</p>
+    </div>
+    <div class="grid grid--2">
+      <div class="card card--soft">
+        <p class="need-label">User need</p>
+        <p class="need">“I want to find what I came for without guessing which menu it's under.”</p>
+      </div>
+      <div class="card card--soft">
+        <p class="need-label">Business need</p>
+        <p class="need">Fewer phone calls to reception asking where to find things, so the phone line is free for people who need it.</p>
+      </div>
+    </div>
+    <p class="measure" style="margin-top:2rem;color:var(--muted)">Hollin Lane Surgery is fictional. Its structure is a composite of patterns that are common on small UK GP surgery websites.</p>
+  </div>
+</section>
+
+<section class="band band--surface" id="before" aria-labelledby="before-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">The before</span>
+      <h2 id="before-title">Four labels that could hold anything</h2>
+    </div>
+    <div class="grid grid--2">
+      <article class="card"><span class="card__num">1</span><h3>The top tasks are 2 clicks deep</h3><p>Booking an appointment and ordering a prescription are why most people visit. Both sit inside “Patient Services”, alongside 6 other pages.</p></article>
+      <article class="card"><span class="card__num">2</span><h3>“Information” and “Resources” overlap</h3><p>The new patient page is under “Information”, but the registration form is under “Resources”. Neither label predicts either.</p></article>
+      <article class="card"><span class="card__num">3</span><h3>The same thing in several places</h3><p>Opening times appear under About Us and Contact Us, with different hours. The NHS App is explained twice. Feedback is split across 2 pages.</p></article>
+      <article class="card"><span class="card__num">4</span><h3>Urgent help is hidden</h3><p>What to do when the surgery is closed, the most urgent page on the site, is the 3rd item under “Information”.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="inventory" aria-labelledby="inventory-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Artefact 1 · Content inventory</span>
+      <h2 id="inventory-title">Every page, and the task it supports</h2>
+      <p>Each page in the current menu, where it lives, the patient task behind it, any problem, and where it goes in the new structure.</p>
+    </div>
+    <ul class="legend" aria-label="Key">
+      <li><span class="tag tag--keep">Keep</span></li>
+      <li><span class="tag tag--move">Move or merge</span></li>
+      <li><span class="tag tag--change">Rewrite or split</span></li>
+      <li><span class="tag tag--cut">Cut</span></li>
+    </ul>
+    <div class="table-wrap" role="region" aria-label="Content inventory" tabindex="0">
+      <table class="data-table">
+        <caption>31 pages: 3 kept, 12 moved, 7 merged, 6 rewritten or split, 3 cut</caption>
+        <thead><tr><th scope="col">Page</th><th scope="col">Current menu</th><th scope="col">Patient task</th><th scope="col">Problem</th><th scope="col">Action</th><th scope="col">New place</th></tr></thead>
+        <tbody>
+          {%- for r in inventory %}
+          <tr><td><strong>{{ r[0] }}</strong></td><td>{{ r[1] }}</td><td>{{ r[2] }}</td><td>{{ r[3] }}</td><td><span class="tag tag--{{ r[4] }}">{{ r[5] }}</span></td><td>{{ r[6] }}</td></tr>
+          {%- endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="band band--surface" id="sitemaps" aria-labelledby="sitemaps-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Artefact 2 · Sitemaps</span>
+      <h2 id="sitemaps-title">From how the surgery works to what patients do</h2>
+      <p>The same content, reorganised. Top tasks move to the top level, and every label names what's inside it.</p>
+    </div>
+    <div class="maps">
+      <div class="card map-card">
+        <h3>Before <small>5 sections</small></h3>
+        <ul class="tree" aria-label="Sitemap before">
+          <li><span class="node">About Us <span class="flag flag--vague">Vague</span></span>
+            <ul><li>Practice staff</li><li>Practice policies</li><li><span class="node">Opening times <span class="flag flag--dup">Duplicate</span></span></li><li>Patient Participation Group</li><li>Friends and Family Test</li><li><span class="node">News <span class="flag flag--old">Out of date</span></span></li><li>Careers</li></ul></li>
+          <li><span class="node">Patient Services <span class="flag flag--vague">Vague</span></span>
+            <ul><li>Appointments</li><li>Repeat Prescriptions</li><li>Test Results</li><li>Home Visits</li><li>Clinics</li><li>Travel vaccinations</li><li><span class="node">Sick notes <span class="flag flag--old">Old name</span></span></li><li>Non-NHS services</li></ul></li>
+          <li><span class="node">Information <span class="flag flag--vague">Vague</span></span>
+            <ul><li><span class="node">New patients <span class="flag flag--dup">Duplicate</span></span></li><li><span class="node">Practice leaflet <span class="flag flag--old">Out of date</span></span></li><li>Out of hours</li><li>Carers</li><li>Comments &amp; Complaints</li><li>Privacy notice</li><li>Accessibility</li><li>Chaperones</li></ul></li>
+          <li><span class="node">Resources <span class="flag flag--vague">Vague</span></span>
+            <ul><li><span class="node">Health A-Z <span class="flag flag--dup">Duplicates NHS website</span></span></li><li>Self-help</li><li><span class="node">Online services <span class="flag flag--dup">Duplicate</span></span></li><li>Forms</li><li>Leaflets</li><li>Useful numbers</li></ul></li>
+          <li><span class="node">Contact Us</span></li>
+        </ul>
+      </div>
+      <span class="maps__arrow" aria-hidden="true">→</span>
+      <div class="card map-card">
+        <h3>After <small>6 sections, plus 2 links</small></h3>
+        <ul class="tree" aria-label="Sitemap after">
+          <li><span class="node">Appointments <span class="flag flag--new">Top task</span></span>
+            <ul><li>Book an appointment</li><li>Cancel or change an appointment</li><li>Home visits</li><li>When we're closed</li></ul></li>
+          <li><span class="node">Prescriptions <span class="flag flag--new">Top task</span></span>
+            <ul><li>Order a repeat prescription</li><li>Change your pharmacy</li></ul></li>
+          <li><span class="node">Test results and letters</span>
+            <ul><li>Get your test results</li><li>Fit notes</li><li>Letters, forms and fees</li><li>Your medical record</li></ul></li>
+          <li><span class="node">Vaccinations and clinics</span>
+            <ul><li>Flu and COVID vaccinations</li><li>Travel vaccinations</li><li>Baby and child clinics</li><li>Asthma, diabetes and other reviews</li></ul></li>
+          <li><span class="node">Register with us</span>
+            <ul><li>Check if you can register</li><li>How to register</li><li>Change your details</li></ul></li>
+          <li><span class="node">Health advice and support</span>
+            <ul><li>Look after yourself at home</li><li>Support for carers</li><li>Leaflets</li><li>Useful phone numbers</li></ul></li>
+        </ul>
+        <p class="utility"><strong>In the header:</strong> Contact and opening times · About the surgery (team, feedback and complaints, patient group, policies and privacy, jobs)<br><strong>In the footer:</strong> When we're closed · Privacy · Accessibility</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="labels" aria-labelledby="labels-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Artefact 3 · Labelling rationale</span>
+      <h2 id="labels-title">Every label, the alternatives, and why</h2>
+      <p>A label has one job: to let someone predict what's behind it before they click. Each one starts from the words patients use, checked against the NHS website so the surgery's site uses the same language as the rest of the NHS.</p>
+    </div>
+    <div class="table-wrap" role="region" aria-label="Labelling rationale" tabindex="0">
+      <table class="data-table">
+        <thead><tr><th scope="col">Label</th><th scope="col">Alternatives I considered</th><th scope="col">Why this one</th></tr></thead>
+        <tbody>
+          {%- for l in labels %}
+          <tr><td><strong>{{ l[0] }}</strong></td><td>{{ l[1] }}</td><td>{{ l[2] }}</td></tr>
+          {%- endfor %}
+        </tbody>
+      </table>
+    </div>
+    <h3 style="margin-top:3rem">Labels I changed</h3>
+    <ul class="swaps">
+      <li><del>Patient Services</del><span aria-hidden="true">→</span><ins>Appointments, Prescriptions</ins></li>
+      <li><del>Resources</del><span aria-hidden="true">→</span><ins>Health advice and support</ins></li>
+      <li><del>Non-NHS services</del><span aria-hidden="true">→</span><ins>Letters, forms and fees</ins></li>
+      <li><del>Sick notes</del><span aria-hidden="true">→</span><ins>Fit notes</ins></li>
+      <li><del>Subject access request</del><span aria-hidden="true">→</span><ins>Your medical record</ins></li>
+      <li><del>Out of hours</del><span aria-hidden="true">→</span><ins>When we're closed</ins></li>
+    </ul>
+  </div>
+</section>
+
+<section class="band band--soft" id="research" aria-labelledby="research-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Artefact 4 · Card sort and tree test</span>
+      <h2 id="research-title">Testing the structure with people</h2>
+      <p>The new structure is a hypothesis until patients use it. An open card sort shows how people group the content and what they call the groups. A tree test then checks whether people can find things in the new menu, with no design to help them.</p>
+    </div>
+
+    <div class="study card">
+      <div>
+        <h3>Open card sort</h3>
+        <p><span class="status">Ready to run</span></p>
+        <dl class="facts">
+          <div><dt>Tool</dt><dd>Optimal Workshop</dd></div>
+          <div><dt>People</dt><dd>12 local adults who've used a GP website in the last year</dd></div>
+          <div><dt>Cards</dt><dd>30 tasks, written without any current or proposed label words</dd></div>
+          <div><dt>Task</dt><dd>Sort the cards into groups that make sense to you, then name each group</dd></div>
+          <div><dt>What it tells me</dt><dd>Which pages belong together, and the words people use for each group</dd></div>
+        </dl>
+      </div>
+      <div>
+        <h4>The 30 cards</h4>
+        <ul class="deck">
+          {%- for c in cards %}<li>{{ c }}</li>{% endfor %}
+        </ul>
+        <p class="path" style="margin-top:1rem">Cards are written as tasks, not labels, like “Get a note for my employer” rather than “Fit notes”, so they don't lead people to my answer.</p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:1.5rem">
+      <div class="touchpoint__head" style="display:flex;flex-wrap:wrap;gap:1rem;align-items:center;margin-bottom:1rem">
+        <h3 style="margin:0">Tree test on the new structure</h3><span class="status">Ready to run</span>
+      </div>
+      <p>8 tasks, run in Optimal Workshop with a different group of 12 people. Each task passes if at least 80% of people reach the right place without going back. Any task below that gets its labels or structure changed and is tested again.</p>
+      <ol class="tasks">
+        {%- for t in tasks %}
+        <li><q>{{ t.q }}</q><span class="path">Correct answer: <b>{{ t.path }}</b></span>
+          {%- if t.result %}<div class="result-bar" role="img" aria-label="{{ t.result }}% success"><span style="width: {{ t.result }}%"></span></div>{% endif %}
+        </li>
+        {%- endfor %}
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="decisions" aria-labelledby="decisions-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Content decisions</span>
+      <h2 id="decisions-title">The reasoning behind the structure</h2>
+    </div>
+    <div class="grid grid--2">
+      <article class="card">
+        <span class="card__num">1</span>
+        <h3>Top tasks get the top level</h3>
+        <p>Appointments and prescriptions are the reasons most people visit a GP surgery website, so each has its own menu item. That's one click instead of two, and no guessing which group they're in.</p>
+      </article>
+      <article class="card">
+        <span class="card__num">2</span>
+        <h3>Merge duplicates, cut what's out of date</h3>
+        <p>7 pages were merged into the page they repeated, so there's one set of opening times, not two that disagree. 2 out-of-date pages were cut, and the Health A-Z was replaced with one link to the NHS website, which is kept up to date by the NHS.</p>
+      </article>
+      <article class="card">
+        <span class="card__num">3</span>
+        <h3>Forms live with their task</h3>
+        <p>A “Forms” page asks people to know they need a form. Instead, the registration form is on Register with us, and the medical records request is on Your medical record.</p>
+      </article>
+      <article class="card">
+        <span class="card__num">4</span>
+        <h3>The most urgent page is in 3 places</h3>
+        <p>“When we're closed” is under Appointments, where people look when they can't get one, in the footer of every page, and on the home page. Duplication is a problem for ordinary content, but this is a safety need.</p>
+      </article>
+      <article class="card">
+        <span class="card__num">5</span>
+        <h3>Use the words the NHS uses</h3>
+        <p>Patients move between the NHS App, the NHS website and their surgery's site. Using the same terms, like “fit note” and “repeat prescription”, means people don't have to translate between them.</p>
+      </article>
+      <article class="card">
+        <span class="card__num">6</span>
+        <h3>“About” stays, but shrinks</h3>
+        <p>People do expect an “About” section for the team and policies, so I kept it. It moves to the header with Contact, out of the way of the tasks.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band band--surface" id="results" aria-labelledby="results-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">How I checked it</span>
+      <h2 id="results-title">What's checked, and what's next</h2>
+    </div>
+    <ul class="checks">
+      <li><div><strong>Every page has a home</strong><span>All 31 pages in the inventory are kept, merged, moved or cut, with nothing left over.</span></div></li>
+      <li><div><strong>Every task has one right answer</strong><span>Each of the 8 tree test tasks leads to one clear place in the new structure.</span></div></li>
+      <li><div><strong>Labels tested against the NHS website</strong><span>Every label checked against the terms the NHS website uses for the same thing.</span></div></li>
+      <li><div><strong>Accessibility</strong><span>The sitemaps are real nested lists, so screen readers can explore them. The page passes axe.</span></div></li>
+    </ul>
+    <div class="grid grid--2" style="margin-top:3rem">
+      <div class="card card--soft">
+        <h3>After the research</h3>
+        <p>The card sort will show whether people group vaccinations with appointments or keep them separate, and what they call “Test results and letters”. Any tree test task under 80% will get its label changed and be tested again.</p>
+      </div>
+      <div class="card card--soft">
+        <h3>What I'd do next</h3>
+        <p>Write the home page, so it shows the top 3 tasks and any urgent notice. Then rewrite the “When we're closed” page, so the most important page on the site is also the clearest.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band band--tight" aria-label="More projects">
+  <div class="wrap next">
+    <div>
+      <span class="eyebrow">Next project</span>
+      <h2>A content style guide for a small gym booking app</h2>
+    </div>
+    <a class="button" href="/style-guide/">See the style guide project</a>
+  </div>
+</section>

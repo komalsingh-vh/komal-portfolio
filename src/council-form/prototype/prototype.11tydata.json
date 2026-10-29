@@ -1,0 +1,8 @@
+{
+  "layout": "prototype.njk",
+  "prototype": {
+    "service": "Apply for a single person discount",
+    "root": "/council-form/prototype/",
+    "caseStudy": "/council-form/"
+  }
+}

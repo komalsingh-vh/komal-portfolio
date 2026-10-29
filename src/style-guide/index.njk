@@ -1,0 +1,345 @@
+---
+tone:
+  - { where: "Welcome screen", mood: "Warm and encouraging", at: 12, copy: "Welcome to Fettle, Sam. Find a class you'll enjoy and book it in 2 taps." }
+  - { where: "Class booked", mood: "Warm, with the facts", at: 25, copy: "You're booked on Spin, Thursday 6:30pm. See you there." }
+  - { where: "Class full", mood: "Helpful, a bit more matter-of-fact", at: 45, copy: "Spin is full. Join the waiting list and we'll text you if a place comes up." }
+  - { where: "Something went wrong", mood: "Calm and practical", at: 60, copy: "We couldn't load your bookings. Check your connection and try again." }
+  - { where: "Payment failed", mood: "Serious and clear about what happens", at: 78, copy: "Your payment didn't go through, so your membership hasn't renewed. Update your card by 30 November to keep booking." }
+  - { where: "Deleting an account", mood: "Serious, careful, no persuasion", at: 92, copy: "Deleting your account removes all your bookings and history. This cannot be undone." }
+rules:
+  - { title: "Dates", rule: "Day, date and month. Short form in tight spaces. No ordinals or slashes.", do: "Thursday 14 November · Thu 14 Nov", dont: "14/11 · 14th Nov · 11-14" }
+  - { title: "Times", rule: "12-hour clock, with am or pm and no space. Use “midday” and “midnight”.", do: "6:30pm · midday", dont: "18:30 · 6.30 PM · 12pm" }
+  - { title: "Numbers", rule: "Numerals for every number, so they stand out when people scan.", do: "3 places left · £45 a month", dont: "three spaces remaining · £45.00/mo" }
+  - { title: "Capital letters", rule: "Sentence case everywhere, including buttons and headings. Class names are proper nouns.", do: "Book class · Yoga Flow", dont: "Book A Class · JOIN CLASS" }
+  - { title: "Contractions", rule: "Use them, so the app sounds like a person. Write “cannot” in full only in serious warnings.", do: "You're booked · We'll text you", dont: "You are now booked · We will text you" }
+  - { title: "Exclamation marks", rule: "At most one, and only for real celebrations. Never in errors or anything about money.", do: "Your first class is booked!", dont: "Oops! Payment failed!" }
+  - { title: "Emoji", rule: "None in interface text. Screen readers read them out, so 💪 becomes “flexed biceps”.", do: "You're booked on Spin", dont: "You're booked 💪🔥" }
+  - { title: "Inclusive language", rule: "Describe classes by what happens, not who they're for or how bodies should look.", do: "Low-impact strength · All levels", dont: "Ladies' toning · Get bikini ready" }
+  - { title: "Words to avoid", rule: "No hype, no shame, and no words that make exercise sound easy for everyone.", do: "Book · Waiting list · Try", dont: "Crush it · Beast mode · Burn off that pizza · Simply · Easy" }
+---
+<div id="top"></div>
+
+<section class="hero" aria-labelledby="title">
+  <div class="wrap hero__grid">
+    <div>
+      <p class="eyebrow">Content design case study · Voice and tone</p>
+      <h1 id="title">One voice for a gym app that had <em>four</em></h1>
+      <p class="lede">I wrote a short content style guide for a small gym booking app. With it, anyone on the team can write words that sound like the brand, without asking the content designer every time.</p>
+      <ul class="chips" aria-label="Skills shown">
+        <li>Voice and tone</li><li>Style guide</li><li>Content patterns</li><li>Content operations</li><li>Inclusive language</li>
+      </ul>
+      <div class="button-row">
+        <a class="button" href="#voice">See the voice principles</a>
+        <a class="button button--ghost" href="#audit">Read the case study</a>
+      </div>
+    </div>
+    <div class="stack" aria-hidden="true">
+      <div class="app">
+        <div class="app__bar"><span>9:41</span><span>Fettle</span></div>
+        <div class="app__title">This week</div>
+        <div class="app__class"><div>Spin<span>Thu 6:30pm · Studio 2</span></div><span class="app__pill">Book</span></div>
+        <div class="app__class"><div>Yoga Flow<span>Fri 7am · Studio 1</span></div><span class="app__pill">Book</span></div>
+        <div class="app__class"><div>Low-impact strength<span>Sat 10am · Studio 2</span></div><span class="app__pill">Book</span></div>
+      </div>
+      <div class="app">
+        <div class="app__bar"><span>9:41</span><span>Fettle</span></div>
+        <div class="app__ok"><strong>You're booked on Spin</strong><br>Thursday 14 November, 6:30pm, Studio 2.</div>
+        <p class="app__meta" style="margin-top:.6rem">Cancel by 6:30am on Thursday to avoid a £5 charge.</p>
+        <span class="app__btn">Add to calendar</span>
+        <span class="app__btn app__btn--ghost">Cancel booking</span>
+      </div>
+      <div class="app">
+        <div class="app__bar"><span>9:41</span><span>Fettle</span></div>
+        <div class="app__title">Spin is full</div>
+        <p class="app__meta">Join the waiting list and we'll text you if a place comes up.</p>
+        <span class="app__btn">Join waiting list</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band band--tight" aria-label="Project summary">
+  <div class="wrap">
+    <dl class="meta">
+      <div><dt>My role</dt><dd>Content designer, self-initiated</dd></div>
+      <div><dt>Product</dt><dd>Fettle, a fictional gym class booking app</dd></div>
+      <div><dt>Made</dt><dd>Audit, voice, tone scale, style rules, 4 patterns</dd></div>
+      <div><dt>Built on</dt><dd>The GOV.UK style guide, adapted for a consumer app</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="band band--brand" aria-labelledby="numbers">
+  <div class="wrap">
+    <h2 id="numbers" class="visually-hidden">Results at a glance</h2>
+    <ul class="stats">
+      <li class="stat"><span class="stat__value">4 → 1</span><span class="stat__label">labels for the button that books a class</span></li>
+      <li class="stat"><span class="stat__value">3</span><span class="stat__label">voice principles, each with “this, not that”</span></li>
+      <li class="stat"><span class="stat__value">9</span><span class="stat__label">style rules for the things that come up most</span></li>
+      <li class="stat"><span class="stat__value">&lt;10 min</span><span class="stat__label">to read the whole guide, so people actually do</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="brief">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">The brief</span>
+      <h2 id="brief">Everyone writes, so everyone needs the rules</h2>
+      <p>In a small team, the developer writes the error messages, the marketing person writes the notifications and the owner writes the cancellation policy. Without a shared guide, the app ends up with 4 voices.</p>
+    </div>
+    <div class="grid grid--2">
+      <div class="card card--soft">
+        <p class="need-label">User need</p>
+        <p class="need">People get the same clear experience wherever they are in the app.</p>
+      </div>
+      <div class="card card--soft">
+        <p class="need-label">Business need</p>
+        <p class="need">Anyone in the team can write content that sounds like the brand, without asking the content designer every time.</p>
+      </div>
+    </div>
+    <p class="measure" style="margin-top:2rem;color:var(--muted)">Fettle is fictional. The inconsistencies in the audit are a composite of patterns that are common in small booking apps.</p>
+  </div>
+</section>
+
+<section class="band band--surface" id="audit" aria-labelledby="audit-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Artefact 1 · Content audit snapshot</span>
+      <h2 id="audit-title">The same button, said 4 ways</h2>
+      <p>Every time the app says the same thing in different ways, across screens, notifications and emails. The button that books a class has 4 labels in 4 places.</p>
+    </div>
+    <div class="wall">
+      <div class="shot"><span class="shot__where">Class list</span><span class="shot__btn">Book</span></div>
+      <div class="shot"><span class="shot__where">Class page</span><span class="shot__btn shot__btn--sq">Reserve</span></div>
+      <div class="shot"><span class="shot__where">Timetable</span><span class="shot__btn shot__btn--caps">Join class</span></div>
+      <div class="shot"><span class="shot__where">Notification</span><span class="shot__btn shot__btn--fun">Sign me up!</span></div>
+    </div>
+    <div class="wall" style="margin-top:1rem">
+      <div class="shot"><span class="shot__where">Waiting list, 3 names</span><p class="shot__text">waitlist · queue · standby</p></div>
+      <div class="shot"><span class="shot__where">Dates, 4 formats</span><p class="shot__text">Thu 14/11 · 14th November · Tomorrow · 14.11.24</p></div>
+      <div class="shot"><span class="shot__where">Times, 2 clocks</span><p class="shot__text">18:30 on the timetable, 6.30pm in emails</p></div>
+      <div class="shot"><span class="shot__where">Capitals</span><p class="shot__text">Book A Class · My bookings · VIEW TIMETABLE</p></div>
+    </div>
+    <div class="clash">
+      <div class="card">
+        <p class="need-label">Welcome screen</p>
+        <p class="need">“Let's crush it! 💪 Time to unleash your inner beast.”</p>
+      </div>
+      <div class="card">
+        <p class="need-label">Cancellation screen, one tap later</p>
+        <p class="need">“Cancellations made less than 12 hours prior to the commencement of a session will incur a charge in accordance with section 4.2 of the Membership Terms.”</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="voice" aria-labelledby="voice-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Artefact 2 · Voice principles</span>
+      <h2 id="voice-title">3 principles, each with <em>this, not that</em></h2>
+      <p>The voice is who Fettle is, and it doesn't change. Each principle answers one of the problems the audit found.</p>
+    </div>
+    <div class="principles">
+      <article class="principle">
+        <h3>Encouraging, <em>not pushy</em></h3>
+        <p>We want people to come to class, but they're adults who know their own bodies. We invite, we don't pressure.</p>
+        <div class="tnt"><p class="this"><b>This</b>Find a class you'll enjoy.</p><p class="that"><b>Not that</b>No excuses! Crush your goals today!</p></div>
+      </article>
+      <article class="principle">
+        <h3>Clear, <em>not clever</em></h3>
+        <p>People book between other things: on the bus, at work, half-asleep. Plain words beat puns every time.</p>
+        <div class="tnt"><p class="this"><b>This</b>Book class</p><p class="that"><b>Not that</b>Sign me up for the sweat sesh!</p></div>
+      </article>
+      <article class="principle">
+        <h3>Straight about money, <em>never hidden</em></h3>
+        <p>Charges, deadlines and rules are where trust is won or lost. Say them plainly, before people need them.</p>
+        <div class="tnt"><p class="this"><b>This</b>Cancel by 6:30am to avoid a £5 charge.</p><p class="that"><b>Not that</b>Late cancellations may incur a fee in accordance with section 4.2.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band band--brand" id="tone" aria-labelledby="tone-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Artefact 3 · Tone scale</span>
+      <h2 id="tone-title">Same voice, different moments</h2>
+      <p>Tone changes with how the person is likely to feel. The more is at stake, the calmer and more careful the words become.</p>
+    </div>
+    <p class="scale-key" aria-hidden="true"><span>Warm and upbeat</span><span>Calm and serious</span></p>
+    <ol class="scale">
+      {%- for t in tone %}
+      <li>
+        <h3>{{ t.where }}<small>{{ t.mood }}</small></h3>
+        <div>
+          <div class="track" role="img" aria-label="Tone: {{ t.mood }}"><i style="--at: {{ t.at }}%"></i></div>
+          <q>{{ t.copy }}</q>
+        </div>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="band" id="rules" aria-labelledby="rules-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Artefact 4 · Style rules</span>
+      <h2 id="rules-title">The 9 things that come up most</h2>
+      <p>Not a full grammar guide. Just the rules people get wrong most often in this app, each with an example to copy.</p>
+    </div>
+    <div class="rules">
+      {%- for r in rules %}
+      <article class="rule">
+        <h3>{{ r.title }}</h3>
+        <p>{{ r.rule }}</p>
+        <div class="dodont"><p class="do"><b>Do</b>{{ r.do }}</p><p class="dont"><b>Don't</b>{{ r.dont }}</p></div>
+      </article>
+      {%- endfor %}
+      <article class="rule">
+        <h3>The words we always use</h3>
+        <p>One name for each thing, in every screen, email and notification.</p>
+        <div class="dodont"><p class="do"><b>Use</b>Book · Waiting list · Class · Membership</p><p class="dont"><b>Not</b>Reserve, Join, Sign up · Waitlist, Queue · Session · Plan</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band band--surface" id="patterns" aria-labelledby="patterns-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Artefact 5 · Content patterns</span>
+      <h2 id="patterns-title">4 components, written once, used everywhere</h2>
+      <p>Each pattern has a rule, a good example, a bad example and notes on accessibility. They sit next to the matching components in the design system, so designers and developers see them where they work.</p>
+    </div>
+    <div class="patterns">
+      <article class="pattern">
+        <div class="pattern__demo" aria-hidden="true"><div class="app"><div class="app__class"><div>Spin<span>Thu 6:30pm</span></div><span class="app__pill">Book</span></div><span class="app__btn">Join waiting list</span></div></div>
+        <div class="pattern__text">
+          <h3>Button</h3>
+          <dl>
+            <div><dt>Rule</dt><dd>Start with a verb and say what happens. Sentence case, 3 words or fewer.</dd></div>
+            <div><dt>Good</dt><dd class="good">Book class · Join waiting list · Update card</dd></div>
+            <div><dt>Bad</dt><dd class="bad">Submit · Sign me up! · OK</dd></div>
+            <div><dt>Accessibility</dt><dd>When a list has many “Book” buttons, add hidden text so each one is read as “Book Spin, Thursday 6:30pm”.</dd></div>
+          </dl>
+        </div>
+      </article>
+      <article class="pattern">
+        <div class="pattern__demo" aria-hidden="true"><div class="app"><div class="app__title">Spin, Thu 6:30pm</div><div class="app__err">That class is now full. Join the waiting list and we'll text you if a place comes up.</div></div></div>
+        <div class="pattern__text">
+          <h3>Error message</h3>
+          <dl>
+            <div><dt>Rule</dt><dd>Say what happened and what to do next. No blame, no “oops”.</dd></div>
+            <div><dt>Good</dt><dd class="good">That class is now full. Join the waiting list and we'll text you if a place comes up.</dd></div>
+            <div><dt>Bad</dt><dd class="bad">Oops! Something went wrong 😬</dd></div>
+            <div><dt>Accessibility</dt><dd>Announce it to screen readers, show it next to what went wrong, and don't rely on red alone.</dd></div>
+          </dl>
+        </div>
+      </article>
+      <article class="pattern">
+        <div class="pattern__demo" aria-hidden="true"><div class="app"><div class="app__empty"><b>No bookings yet</b>Classes you book will show here.</div><span class="app__btn">Find a class</span></div></div>
+        <div class="pattern__text">
+          <h3>Empty state</h3>
+          <dl>
+            <div><dt>Rule</dt><dd>Say why it's empty and give one clear next step.</dd></div>
+            <div><dt>Good</dt><dd class="good">No bookings yet. Classes you book will show here. [Find a class]</dd></div>
+            <div><dt>Bad</dt><dd class="bad">Nothing to see here!</dd></div>
+            <div><dt>Accessibility</dt><dd>Illustrations are decorative and hidden from screen readers. The next step is a real button.</dd></div>
+          </dl>
+        </div>
+      </article>
+      <article class="pattern">
+        <div class="pattern__demo" aria-hidden="true"><div class="app"><div class="app__ok"><strong>You're booked on Spin</strong><br>Thu 14 Nov, 6:30pm, Studio 2</div><p class="app__meta" style="margin-top:.5rem">Cancel by 6:30am to avoid a £5 charge.</p></div></div>
+        <div class="pattern__text">
+          <h3>Confirmation</h3>
+          <dl>
+            <div><dt>Rule</dt><dd>Confirm what, when and where, then anything people need to know next, like a deadline.</dd></div>
+            <div><dt>Good</dt><dd class="good">You're booked on Spin, Thursday 14 November, 6:30pm, Studio 2. Cancel by 6:30am to avoid a £5 charge.</dd></div>
+            <div><dt>Bad</dt><dd class="bad">Success!</dd></div>
+            <div><dt>Accessibility</dt><dd>Announce the confirmation politely, and offer “Add to calendar” as a real button.</dd></div>
+          </dl>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band band--soft" id="decisions" aria-labelledby="decisions-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Content decisions</span>
+      <h2 id="decisions-title">What I put in, and what I left out</h2>
+    </div>
+    <div class="grid grid--2">
+      <article class="card">
+        <span class="card__num">1</span>
+        <h3>Principles that come from the audit</h3>
+        <p>Each principle answers a problem I found: forced hype, wordplay that got in the way, and rules about money buried in legal language. Principles that don't solve a real problem become wallpaper.</p>
+      </article>
+      <article class="card">
+        <span class="card__num">2</span>
+        <h3>What I deliberately left out</h3>
+        <p>Humour as a principle, because it's hard to do consistently and goes wrong in errors. A long brand-values section. Grammar rules people already know. Anything without an example.</p>
+      </article>
+      <article class="card">
+        <span class="card__num">3</span>
+        <h3>Where I followed GOV.UK</h3>
+        <p>Dates, times, numbers, sentence case and how error messages are built all follow the GOV.UK style guide. It's tested, well documented, and there's no reason to reinvent it.</p>
+      </article>
+      <article class="card">
+        <span class="card__num">4</span>
+        <h3>Where I didn't, and why</h3>
+        <p>GOV.UK avoids negative contractions like “can't”. A consumer app sounds stiff without them, so Fettle uses them, except in serious warnings like deleting an account. And one exclamation mark is allowed, for a real celebration.</p>
+        <div class="ba"><p class="ba__side ba__before"><span>GOV.UK</span>You cannot book this class</p><span class="ba__arrow" aria-hidden="true">→</span><p class="ba__side ba__after"><span>Fettle</span>You can't book this class yet</p></div>
+      </article>
+      <article class="card">
+        <span class="card__num">5</span>
+        <h3>Short enough to use</h3>
+        <p>The whole guide is one page and takes under 10 minutes to read. Every rule has an example, because people copy examples rather than follow descriptions.</p>
+      </article>
+      <article class="card">
+        <span class="card__num">6</span>
+        <h3>Built into the tools</h3>
+        <p>Approved button labels live in the design system components, so the right words are the default. New team members get a 15-minute walkthrough, and the content designer reviews the guide every 3 months.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="results" aria-labelledby="results-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">How I checked it</span>
+      <h2 id="results-title">Does the guide follow its own rules?</h2>
+    </div>
+    <ul class="checks">
+      <li><div><strong>Every rule has an example</strong><span>All 9 style rules and 4 patterns have a good and a bad example.</span></div></li>
+      <li><div><strong>The audit is fixed</strong><span>Every inconsistency in the audit has a rule that settles it.</span></div></li>
+      <li><div><strong>It follows itself</strong><span>The examples use the guide's own dates, times, capitals and words.</span></div></li>
+      <li><div><strong>Accessibility</strong><span>This page passes axe with no WCAG 2.2 AA issues, and works at phone width.</span></div></li>
+    </ul>
+    <div class="grid grid--2" style="margin-top:3rem">
+      <div class="card card--soft">
+        <h3>How I'd test it with the team</h3>
+        <p>Give 3 people who aren't writers, like a developer, a designer and the gym manager, the same 3 tasks: write a button, an error and a notification. I'd compare what they write with and without the guide, and turn anything they ask about into a new example.</p>
+      </div>
+      <div class="card card--soft">
+        <h3>What I'd do next</h3>
+        <p>Write the notification and email templates using the guide, since they had the biggest tone problems. Then add a short checklist to the design review process, so new screens are checked against the guide before they're built.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band band--surface band--tight" aria-label="More projects">
+  <div class="wrap next">
+    <div>
+      <span class="eyebrow">Previous project</span>
+      <h2>Restructuring a GP surgery website around patients' tasks</h2>
+    </div>
+    <a class="button" href="/navigation/">See the navigation project</a>
+  </div>
+</section>

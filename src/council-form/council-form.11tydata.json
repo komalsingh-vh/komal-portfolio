@@ -1,0 +1,20 @@
+{
+  "layout": "portal.njk",
+  "portal": {
+    "theme": "council",
+    "mark": "CT",
+    "name": "Council tax form",
+    "title": "Making a council tax discount form easier to complete",
+    "description": "How Komal Singh rewrote a council's single person discount form using GOV.UK patterns: question protocol, one thing per page, error messages and a working prototype.",
+    "fonts": "https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Public+Sans:wght@400;600;700&display=swap",
+    "sections": [
+      { "id": "problem", "text": "Problem" },
+      { "id": "protocol", "text": "Question protocol" },
+      { "id": "flow", "text": "New flow" },
+      { "id": "decisions", "text": "Decisions" },
+      { "id": "errors", "text": "Error messages" },
+      { "id": "prototype", "text": "Prototype" },
+      { "id": "results", "text": "Results" }
+    ]
+  }
+}

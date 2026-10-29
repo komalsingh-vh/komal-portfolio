@@ -1,0 +1,10 @@
+---
+title: What is your council tax account number? (optional)
+backLink: address/
+---
+{% from "proto-macros.njk" import formStart, formEnd, input with context %}
+{{ formStart("name/") }}
+{{ input("account", "What is your council tax account number? (optional)", "",
+  "You can find it at the top of your council tax bill. If you do not have it, leave this blank and we'll find your account using your address.",
+  check="digits", checkError="Council tax account number must only include numbers", width="10", heading=true, inputmode="numeric", spellcheck="false") }}
+{{ formEnd() }}

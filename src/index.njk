@@ -1,0 +1,114 @@
+---
+layout: home.njk
+---
+<section class="hero" aria-labelledby="intro-heading">
+  <div class="wrap">
+    <span class="eyebrow">{{ site.name }} · {{ site.role }} · {{ site.location }}</span>
+    <h1 id="intro-heading">Words that help people <em>get things done</em></h1>
+    <div class="hero__row">
+      <p class="lede">I'm a content designer. I take complicated forms, dense guidance and inconsistent products, and turn them into words people understand and can act on the first time. Each project below shows the problem, the artefacts I made and the reasoning behind every decision.</p>
+      <div>
+        <ul class="swatches" aria-hidden="true">
+          {%- for p in projects %}<li style="--bg: {{ p.tile.bg }}; --fg: {{ p.tile.accent }}">{{ loop.index }}</li>{% endfor %}
+        </ul>
+        <div class="buttons">
+          <a class="button" href="#work">See the 6 projects</a>
+          <a class="button button--ghost" href="mailto:{{ site.email }}">Email me</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="strip" aria-label="What the projects cover">
+  <div class="wrap">
+    <ul>
+      <li>Form design</li><li>Plain English</li><li>Multi-channel content</li><li>UX writing</li><li>Information architecture</li><li>Style guides</li>
+    </ul>
+  </div>
+</div>
+
+<section class="work" id="work" aria-labelledby="work-heading">
+  <div class="wrap">
+    <div class="work__head">
+      <div>
+        <span class="eyebrow">Selected work</span>
+        <h2 id="work-heading">Six projects, six problems</h2>
+      </div>
+      <p>Each one is its own site, designed to suit its subject, from a council form to a gym app. Pick one to see the full case study.</p>
+    </div>
+    <ul class="tiles">
+      {%- for p in projects %}
+      <li class="tile tile--{{ p.slug }}" style="--bg: {{ p.tile.bg }}; --fg: {{ p.tile.ink }}; --accent: {{ p.tile.accent }}; --tfont: {{ p.tile.font }}; --tweight: {{ p.tile.weight }}">
+        <div class="tile__top"><span class="tile__num">0{{ loop.index }}</span><span class="tile__mark" aria-hidden="true">{{ p.tile.mark }}</span></div>
+        <p class="tile__label">{{ p.label }}</p>
+        <h3><a href="/{{ p.slug }}/">{{ p.title }}</a></h3>
+        <p class="tile__stat"><strong>{{ p.tile.stat }}</strong><span>{{ p.tile.statLabel }}</span></p>
+        <div class="tile__foot"><span class="tile__skills">{{ p.skills | join(" · ") }}</span><span class="tile__go" aria-hidden="true">View →</span></div>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="approach" id="approach" aria-labelledby="approach-heading">
+  <div class="wrap approach__grid">
+    <div class="approach__intro">
+      <span class="eyebrow">How I work</span>
+      <h2 id="approach-heading">Every word has a reason</h2>
+      <p>Good content design is mostly decisions: what to ask, what to cut, what to call things, and what comes first. I make those decisions visible, so a team can see why the words are the way they are.</p>
+    </div>
+    <ol class="ways">
+      <li>
+        <h3>Start with the user need</h3>
+        <p>Every project begins with what people are trying to do, and what the organisation needs from it. Both go at the top of the page, and everything is checked against them.</p>
+        <a href="/council-form/">See it in the council form</a>
+      </li>
+      <li>
+        <h3>Cut what isn't needed</h3>
+        <p>A question protocol or content audit shows what each question or paragraph is for. If nobody uses it, it goes. If another page does it better, it moves.</p>
+        <a href="/guidance-page/">See it in the repairs page</a>
+      </li>
+      <li>
+        <h3>One name for each thing</h3>
+        <p>People lose trust when the same thing has 4 names. Terminology lists and style guides keep every channel and every writer consistent.</p>
+        <a href="/touchpoints/">See it in the touchpoints project</a>
+      </li>
+      <li>
+        <h3>Check it against a standard</h3>
+        <p>I measure what can be measured: character limits, readability, accessibility. I design research for the rest, like card sorts and tree tests, before calling a structure finished.</p>
+        <a href="/navigation/">See it in the navigation project</a>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="toolkit" aria-labelledby="toolkit-heading">
+  <div class="wrap">
+    <span class="eyebrow">Toolkit</span>
+    <h2 id="toolkit-heading">Methods, artefacts and standards</h2>
+    <div class="toolkit__grid">
+      <div class="kit">
+        <h3>Methods</h3>
+        <ul><li>Content audits</li><li>Question protocols</li><li>Content matrices</li><li>Card sorting</li><li>Tree testing</li><li>Highlighter tests</li><li>Readability measures</li></ul>
+      </div>
+      <div class="kit">
+        <h3>Artefacts</h3>
+        <ul><li>Page-by-page flows</li><li>Error message sets</li><li>Copy decks</li><li>Microcopy inventories</li><li>Sitemaps</li><li>Terminology lists</li><li>Style guides</li><li>Prototypes</li></ul>
+      </div>
+      <div class="kit">
+        <h3>Standards</h3>
+        <ul><li>GOV.UK Design System</li><li>GOV.UK style guide</li><li>WCAG 2.2 AA</li><li>Plain English</li><li>Inclusive language</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact" aria-labelledby="contact-heading">
+  <div class="wrap">
+    <span class="eyebrow">Contact</span>
+    <h2 id="contact-heading">Need words that <em>work</em>? Let's talk.</h2>
+    <a class="contact__mail" href="mailto:{{ site.email }}">{{ site.email }}</a>
+    <p>I'm a content designer based in {{ site.location }}, open to roles and projects in content design and UX writing.</p>
+  </div>
+</section>

@@ -1,0 +1,135 @@
+/* Portal 3: one moment, every touchpoint. Deep indigo, with a colour for each channel. */
+.theme-signal {
+  --ink: #17142e;
+  --muted: #56516f;
+  --line: #dedbef;
+  --paper: #fbfaff;
+  --surface: #f1effb;
+  --brand: #1b1640;
+  --brand-ink: #f4f2ff;
+  --brand-soft: #e7e3fb;
+  --accent: #c8f560;
+  --accent-ink: #17142e;
+  --link: #5b3fd6;
+  --focus: #c8f560;
+  --font-head: "Sora", system-ui, sans-serif;
+  --font-body: "Manrope", system-ui, sans-serif;
+  --head-weight: 700;
+  --radius: 18px;
+  --radius-sm: 10px;
+
+  /* One colour per channel, always shown with its name */
+  --c-card: #f7b538;
+  --c-push: #5cc8f5;
+  --c-sms: #4fd18b;
+  --c-email: #f58ac4;
+  --c-web: #a993ff;
+}
+.theme-signal .portal-brand__mark { background: linear-gradient(135deg, #5b3fd6, #f58ac4); }
+.theme-signal .hero { background: radial-gradient(circle at 80% 30%, #3b2b8f 0, transparent 50%), radial-gradient(circle at 10% 90%, #2b1f6b 0, transparent 45%), var(--brand); }
+.theme-signal .hero h1 { letter-spacing: -0.03em; }
+.theme-signal .lime { color: var(--accent); }
+.theme-signal h2 { letter-spacing: -0.025em; }
+
+/* Channel labels */
+.ch { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.2rem 0.65rem 0.2rem 0.45rem; border-radius: 999px; font-size: 0.82rem; font-weight: 700; color: #17142e; background: color-mix(in srgb, var(--c) 35%, white); white-space: nowrap; }
+.ch::before { content: ""; width: 0.6rem; height: 0.6rem; border-radius: 50%; background: var(--c); }
+.ch--card { --c: var(--c-card); }
+.ch--push { --c: var(--c-push); }
+.ch--sms { --c: var(--c-sms); }
+.ch--email { --c: var(--c-email); }
+.ch--web { --c: var(--c-web); }
+
+/* Hero collage */
+.collage { position: relative; min-height: 31rem; }
+.collage > * { position: absolute; }
+.collage .lock { right: 4%; top: 0; }
+.collage .float-sms { left: 0; top: 1rem; width: 15rem; transform: rotate(-3deg); }
+.collage .float-mail { left: 0; bottom: 2.5rem; width: 15.5rem; transform: rotate(2deg); }
+.collage .float-card { right: 0; bottom: 0; width: 12.5rem; transform: rotate(4deg); }
+@media (max-width: 60rem) { .collage { display: none; } }
+
+/* Phone lock screen with a notification */
+.lock { width: 230px; height: 440px; border-radius: 34px; border: 9px solid #0d0b1c; background: linear-gradient(160deg, #6d4fe0, #f58ac4 70%, #f7b538); padding: 3rem 0.7rem 1rem; color: #fff; box-shadow: 0 30px 60px -20px rgb(0 0 0 / 55%); }
+.lock__time { text-align: center; font-family: var(--font-head); font-size: 3rem; font-weight: 600; line-height: 1; }
+.lock__date { text-align: center; font-size: 0.85rem; margin-bottom: 1.6rem; opacity: 0.9; }
+.notif { background: rgb(255 255 255 / 82%); color: #17142e; border-radius: 16px; padding: 0.6rem 0.75rem; font-size: 0.8rem; line-height: 1.35; backdrop-filter: blur(6px); }
+.notif__app { display: flex; justify-content: space-between; font-size: 0.68rem; color: #56516f; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.15rem; }
+.notif strong { display: block; }
+
+/* Text message */
+.sms { background: #fff; border-radius: 18px; padding: 0.9rem 1rem; box-shadow: 0 20px 40px -20px rgb(0 0 0 / 40%); color: #17142e; }
+.sms__from { font-size: 0.72rem; font-weight: 700; color: #56516f; margin-bottom: 0.4rem; }
+.sms__bubble { background: #e9e9ee; border-radius: 16px 16px 16px 4px; padding: 0.6rem 0.8rem; font-size: 0.9rem; line-height: 1.4; overflow-wrap: anywhere; }
+.sms__meta { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.6rem; }
+.count { display: inline-block; font-size: 0.75rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 6px; background: var(--surface); color: var(--ink); }
+.count--bad { background: #fde2e0; color: #8a1c14; }
+.count--good { background: #dff3e8; color: #0b4a30; }
+
+/* Email */
+.mail { background: #fff; border-radius: 14px; box-shadow: 0 20px 40px -20px rgb(0 0 0 / 40%); color: #17142e; overflow: hidden; }
+.mail__head { padding: 0.8rem 1rem; border-bottom: 1px solid #ecebf3; }
+.mail__from { font-size: 0.78rem; color: #56516f; }
+.mail__subject { font-weight: 700; font-size: 0.98rem; line-height: 1.3; }
+.mail__pre { font-size: 0.85rem; color: #56516f; }
+.mail__body { padding: 1rem 1.1rem 1.2rem; font-size: 0.95rem; }
+.mail__body p { margin-bottom: 0.7rem; }
+.mail__button { display: inline-block; background: #5b3fd6; color: #fff; font-weight: 700; padding: 0.55rem 1rem; border-radius: 8px; margin: 0.2rem 0 0.8rem; }
+.mail__small { font-size: 0.82rem; color: #56516f; border-top: 1px solid #ecebf3; padding-top: 0.7rem; }
+
+/* Card through the door */
+.doorcard { background: #fff8e6; border-radius: 6px; padding: 1rem 1.1rem; color: #2a2200; box-shadow: 0 20px 40px -20px rgb(0 0 0 / 45%); border-top: 10px solid var(--c-card); font-size: 0.9rem; }
+.doorcard__title { font-family: var(--font-head); font-weight: 700; font-size: 1.05rem; line-height: 1.2; margin-bottom: 0.5rem; }
+.doorcard ul { list-style: none; padding: 0; margin: 0.4rem 0 0.7rem; }
+.doorcard li { display: flex; gap: 0.5rem; margin-bottom: 0.3rem; }
+.doorcard li::before { content: "☐"; }
+.doorcard li.ticked::before { content: "☒"; }
+.hand { font-family: "Comic Sans MS", "Bradley Hand", cursive; color: #1d3fa8; }
+.doorcard__foot { font-size: 0.8rem; border-top: 1px dashed #d9c38a; padding-top: 0.5rem; }
+
+/* Before and after pairs of messages */
+.pair { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1.25rem; align-items: start; }
+@media (max-width: 48rem) { .pair { grid-template-columns: 1fr; } }
+.pair__label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; color: var(--muted); }
+.touchpoint { padding: clamp(1.5rem, 3vw, 2.25rem); border-radius: var(--radius); background: var(--paper); border: 1px solid var(--line); box-shadow: var(--shadow); }
+.touchpoint + .touchpoint { margin-top: 1.5rem; }
+.touchpoint__head { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1rem; margin-bottom: 1.25rem; }
+.touchpoint__head h3 { margin: 0; }
+.touchpoint__notes { margin: 1.25rem 0 0; padding-left: 1.2rem; color: var(--muted); }
+.touchpoint__notes li { margin-bottom: 0.35rem; }
+.stage { background: var(--surface); border-radius: var(--radius-sm); padding: 1.25rem; }
+
+/* Message hierarchy */
+.tiers { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.75rem; }
+.tier { display: grid; grid-template-columns: 3.2rem 1fr; gap: 1rem; align-items: center; border-radius: var(--radius); padding: 1.1rem 1.4rem; background: color-mix(in srgb, var(--brand-ink) 8%, transparent); border: 1px solid color-mix(in srgb, var(--brand-ink) 16%, transparent); }
+.tier:nth-child(1) { margin-right: 0; }
+.tier:nth-child(2) { margin-right: 8%; }
+.tier:nth-child(3) { margin-right: 16%; }
+@media (max-width: 40rem) { .tier { margin-right: 0 !important; } }
+.tier__n { font-family: var(--font-head); font-size: 2rem; font-weight: 700; color: var(--accent); }
+.tier h3 { margin: 0 0 0.25rem; font-size: 1.15rem; }
+.tier p { margin: 0; color: color-mix(in srgb, var(--brand-ink) 80%, transparent); }
+.coverage td, .coverage th { text-align: center !important; }
+.coverage th[scope=row] { text-align: left !important; }
+.yes { font-weight: 700; color: var(--good); }
+.link { font-weight: 700; color: var(--link); }
+.no { color: var(--muted); }
+
+/* Timeline of the moment */
+.moment { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr)); gap: 1rem; }
+.moment li { border-left: 3px solid var(--link); padding: 0.2rem 0 0.2rem 1rem; }
+.moment time { display: block; font-family: var(--font-head); font-weight: 700; }
+.moment p { margin: 0.25rem 0 0.5rem; color: var(--muted); }
+.moment .chs { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+
+/* Mini tracking page */
+.track h4 { font-size: 1.6rem; margin-bottom: 0.25rem; }
+.track__status { list-style: none; padding: 0; margin: 1rem 0 1.5rem; }
+.track__status li { position: relative; padding: 0 0 0.9rem 1.6rem; color: var(--muted); }
+.track__status li::before { content: ""; position: absolute; left: 0; top: 0.4rem; width: 0.75rem; height: 0.75rem; border-radius: 50%; background: var(--line); }
+.track__status li.done::before { background: var(--link); }
+.track__status li.now { color: var(--ink); font-weight: 700; }
+.track__status li.now::before { background: var(--c-card); box-shadow: 0 0 0 4px color-mix(in srgb, var(--c-card) 35%, transparent); }
+.track__actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.25rem; }
+.track__actions span { padding: 0.55rem 1rem; border-radius: 8px; font-weight: 700; border: 2px solid #5b3fd6; color: #5b3fd6; }
+.track__actions span:first-child { background: #5b3fd6; color: #fff; }

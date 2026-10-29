@@ -1,0 +1,9 @@
+---
+title: What is the full name of the person who moved out?
+backLink: date/
+---
+{% from "proto-macros.njk" import formStart, formEnd, input with context %}
+{{ formStart("their-address/") }}
+{{ input("leaver-name", "What is the full name of the person who moved out?", "Enter the full name of the person who moved out",
+  "If more than one adult moved out, give one name now. We'll contact you about the others.", heading=true, spellcheck="false") }}
+{{ formEnd() }}

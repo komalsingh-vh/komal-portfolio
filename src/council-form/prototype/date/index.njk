@@ -1,0 +1,12 @@
+---
+title: When did you become the only adult living there?
+backLink: reason/
+---
+{% from "proto-macros.njk" import formStart, formEnd, date with context %}
+{{ formStart("under-18/", { reason: { moved: "who-moved-out/" } }) }}
+<div data-alt-when="reason=always" data-alt-heading="When did you move in?" data-alt-label="Date you moved in" data-alt-required="Enter the date you moved in">
+{{ date("became-only-adult", "When did you become the only adult living there?",
+  "Date you became the only adult living there",
+  "Enter the date you became the only adult living there") }}
+</div>
+{{ formEnd() }}

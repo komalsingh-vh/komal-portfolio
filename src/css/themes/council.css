@@ -1,0 +1,61 @@
+/* Portal 1: council tax form. Civic and calm: forest green, warm paper, a signal yellow. */
+.theme-council {
+  --ink: #12201a;
+  --muted: #4c5a53;
+  --line: #d6ddd8;
+  --paper: #fbfaf6;
+  --surface: #eef2ec;
+  --brand: #0f3d2e;
+  --brand-ink: #f7f5ee;
+  --brand-soft: #dcefe3;
+  --accent: #ffd23f;
+  --accent-ink: #12201a;
+  --link: #0b6b4a;
+  --focus: #ffd23f;
+  --font-head: "DM Serif Display", Georgia, serif;
+  --font-body: "Public Sans", system-ui, sans-serif;
+  --head-weight: 400;
+}
+
+/* Faint grid lines in the hero, like form paper */
+.theme-council .hero {
+  background-image:
+    linear-gradient(rgb(255 255 255 / 5%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 5%) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+.theme-council .hl { background: linear-gradient(transparent 62%, rgb(255 210 63 / 55%) 62%); padding: 0 0.1em; }
+.theme-council .hero .hl { background: linear-gradient(transparent 70%, rgb(255 210 63 / 45%) 70%); }
+
+/* The original paper form, recreated */
+.paper {
+  position: relative;
+  background: #fffef9;
+  color: #222;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  padding: 2rem 2rem 1.5rem;
+  border-radius: 4px;
+  box-shadow: 0 1px 0 #e9e6da, 0 30px 60px -25px rgb(0 0 0 / 35%);
+  transform: rotate(-0.6deg);
+}
+.paper__head { display: flex; justify-content: space-between; gap: 1rem; font-size: 0.78rem; color: #555; border-bottom: 2px solid #222; padding-bottom: 0.6rem; margin-bottom: 1rem; }
+.paper__title { text-align: center; font-weight: 700; font-size: 1.1rem; margin-bottom: 0.25rem; }
+.paper__intro { text-align: center; font-size: 0.82rem; color: #444; margin-bottom: 1rem; }
+.paper__row { display: flex; flex-wrap: wrap; gap: 0.25rem 0.5rem; align-items: baseline; padding: 0.35rem 0; }
+.paper__row b { font-weight: 400; flex: 0 1 auto; min-width: 0; }
+@media (max-width: 30rem) { .paper { padding: 1.25rem 1rem; transform: none; } }
+.paper__line { flex: 1; border-bottom: 1px dotted #888; min-width: 2rem; height: 1em; }
+.paper__boxes { flex: none; font-size: 0.85rem; }
+.paper__note { font-style: italic; font-size: 0.82rem; color: #444; padding: 0.35rem 0; }
+.pin {
+  display: inline-grid; place-items: center; flex: none;
+  width: 1.55rem; height: 1.55rem; border-radius: 50%;
+  background: #d4351c; color: #fff; font-family: "Public Sans", sans-serif; font-size: 0.75rem; font-weight: 700;
+  box-shadow: 0 0 0 3px #fffef9;
+}
+.problems { list-style: none; padding: 0; margin: 0; display: grid; gap: 1.1rem; }
+.problems li { display: grid; grid-template-columns: auto 1fr; gap: 0.9rem; }
+.problems h3 { font-family: "Public Sans", sans-serif; font-weight: 700; font-size: 1.05rem; margin-bottom: 0.2rem; }
+.problems p { margin: 0; color: var(--muted); }

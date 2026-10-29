@@ -1,0 +1,395 @@
+---
+inventory:
+  - [ "Basket", "Page heading", "Your Cart (2)", "unclear", "“Cart” is American, and 2 of what?" ]
+  - [ "Basket", "Remove link", "Remove", "unclear", "Read alone by a screen reader, it doesn't say which item" ]
+  - [ "Basket", "Quantity label", "Qty", "unclear", "An abbreviation for no reason" ]
+  - [ "Basket", "Promo code field", "Enter code (placeholder)", "unclear", "Disappears when you type, and doesn't say it's optional" ]
+  - [ "Basket", "Promo button", "Apply", "fine", "" ]
+  - [ "Basket", "Promo error", "Invalid code", "unclear", "Doesn't say why, or what to do" ]
+  - [ "Basket", "Delivery cost", "Shipping: Calculated at checkout", "missing", "The cost is hidden until the second page" ]
+  - [ "Basket", "Delivery date", "None", "missing", "People can't tell if it'll arrive in time" ]
+  - [ "Basket", "Main button", "Proceed to Checkout", "unclear", "Formal, and “proceed” adds nothing" ]
+  - [ "Basket", "Empty basket", "Your cart is empty.", "unclear", "A dead end with nowhere to go" ]
+  - [ "Basket", "Sold out item", "Some items in your cart are unavailable", "unclear", "Which items? What happened to the total?" ]
+  - [ "Delivery", "Field labels", "First name* (placeholders)", "unclear", "Labels vanish as you type, so people forget what a field was" ]
+  - [ "Delivery", "Required fields", "* Required", "unclear", "Almost every field is required, so asterisks are noise" ]
+  - [ "Delivery", "Postcode button", "Find Address", "fine", "" ]
+  - [ "Delivery", "Lookup error", "Address not found", "unclear", "No next step" ]
+  - [ "Delivery", "Manual address", "None", "missing", "New-build homes can't be found by postcode" ]
+  - [ "Delivery", "Delivery options", "Standard (3-5 working days) £4.00", "unclear", "Makes people work out a date" ]
+  - [ "Delivery", "Button", "Continue", "unclear", "Continue to what?" ]
+  - [ "Payment", "Card number", "Card number (placeholder)", "unclear", "Placeholder only" ]
+  - [ "Payment", "Expiry date", "MM/YY", "unclear", "A format, not a label" ]
+  - [ "Payment", "Security code", "CVV", "unclear", "Jargon" ]
+  - [ "Payment", "Billing address", "Billing address same as shipping", "fine", "" ]
+  - [ "Payment", "Pay button", "Submit", "unclear", "Doesn't say it takes money, or how much" ]
+  - [ "Payment", "Card declined", "Transaction declined. Error code 05.", "unclear", "A code means nothing. Have I been charged?" ]
+  - [ "Payment", "Processing", "Please wait...", "unclear", "How long? Is it safe to leave?" ]
+  - [ "Confirmation", "Heading", "Thank you for your order!", "fine", "" ]
+  - [ "Confirmation", "Order number", "Order #FH-20931", "fine", "" ]
+  - [ "Confirmation", "Next steps", "You will receive a confirmation email shortly.", "unclear", "Which address? Then what?" ]
+  - [ "Confirmation", "Delivery date", "None", "missing", "The one thing people want to know" ]
+  - [ "Confirmation", "Changing the order", "None", "missing", "Leads to “where's my order?” and “can I cancel?” contacts" ]
+deck:
+  - [ "Basket", "Heading", "Your Cart (2)", "Your basket (2 items)", "30", "Use “1 item” for one" ]
+  - [ "Basket", "Remove link", "Remove", "Remove", "10", "Add hidden text so screen readers say “Remove stoneware table lamp”" ]
+  - [ "Basket", "Promo label", "Enter code (placeholder)", "Promo code (optional)", "25", "Visible label above the field. No placeholder" ]
+  - [ "Basket", "Promo button", "Apply", "Apply code", "15", "" ]
+  - [ "Basket", "Delivery line", "Shipping: Calculated at checkout", "Delivery from £4.00. Order today and it arrives by Friday 22 November", "75", "Date from the delivery service. Recalculate at the 8pm cut-off" ]
+  - [ "Basket", "Main button", "Proceed to Checkout", "Go to checkout", "20", "" ]
+  - [ "Delivery", "Field labels", "Placeholders", "First name, Last name, Postcode", "20 each", "Visible labels. Add autocomplete, like given-name and postal-code" ]
+  - [ "Delivery", "Optional fields", "* Required", "Address line 2 (optional)", "30", "Remove all asterisks. Mark the few optional fields instead" ]
+  - [ "Delivery", "Manual address", "None", "Enter address manually", "25", "Link that shows the address fields" ]
+  - [ "Delivery", "Standard delivery", "Standard (3-5 working days) £4.00", "Standard delivery, £4.00. Arrives Friday 22 November", "60", "Real date, worked out from today" ]
+  - [ "Delivery", "Next day delivery", "Express £7.00", "Next day delivery, £7.00. Order by 8pm for Thursday 21 November", "70", "After 8pm, change to the next date" ]
+  - [ "Delivery", "Button", "Continue", "Continue to payment", "22", "" ]
+  - [ "Payment", "Expiry date", "MM/YY", "Expiry date. Hint: For example, 08/27", "Label 15, hint 30", "autocomplete=cc-exp" ]
+  - [ "Payment", "Security code", "CVV", "Security code. Hint: The last 3 numbers on the back of your card", "Label 15, hint 50", "For Amex, change the hint to “The 4 numbers on the front”" ]
+  - [ "Payment", "Pay button", "Submit", "Pay £42.50", "20", "Amount always matches the total. Disable after one press" ]
+  - [ "Payment", "Processing", "Please wait...", "Taking your payment. This can take up to 30 seconds.", "60", "role=status, so screen readers announce it" ]
+  - [ "Confirmation", "Heading", "Thank you for your order!", "Order placed", "20", "Thanks moves into the first sentence" ]
+  - [ "Confirmation", "Email", "You will receive a confirmation email shortly.", "We've emailed your confirmation to sam@example.com", "80", "Insert the email address they gave" ]
+  - [ "Confirmation", "Next steps", "None", "We'll email you again when it's on its way, with a tracking link.", "80", "" ]
+  - [ "Confirmation", "Changes", "None", "You can change or cancel your order until 8pm today, in Your orders.", "80", "Link “Your orders” to the account page" ]
+states:
+  - { type: error, title: "Promo code expired", old: "Invalid code", new: "WINTER15 ended on 31 October, so we couldn't use it.", why: "Says what's wrong with this code, and that it was once real." }
+  - { type: error, title: "Promo code not recognised", old: "Invalid code", new: "We don't recognise that code. Check it's typed exactly as it's written, including any numbers.", why: "Most wrong codes are typos, so the fix is specific." }
+  - { type: edge, title: "Spend not high enough", old: "Code not applicable to basket", new: "WINTER15 is for orders over £50. Add £11.50 more to use it.", why: "Turns a rejection into a choice, with the exact amount." }
+  - { type: error, title: "Card declined", old: "Transaction declined. Error code 05.", new: "Your bank declined the payment, so you have not been charged. Try a different card, or contact your bank.", why: "Answers the scary question first: have I been charged? No blame." }
+  - { type: error, title: "Bank check failed", old: "Authentication failed", new: "We couldn't confirm the payment with your bank, so you have not been charged. Try again.", why: "People don't know what “authentication” is. They know “your bank”." }
+  - { type: error, title: "Address not found", old: "Address not found", new: "We can't find any addresses for LS6 2AB. Check the postcode, or enter your address manually.", why: "Repeats what they typed, so they can spot a mistake, and offers a way round." }
+  - { type: edge, title: "Sold out while in the basket", old: "Some items in your cart are unavailable", new: "The stoneware table lamp sold out while it was in your basket, so we've removed it. Your total is now £18.50.", why: "Names the item, says what we did, and gives the new total, with a “Tell me when it's back” link." }
+  - { type: edge, title: "Fewer left than ordered", old: "Quantity exceeds available stock", new: "We only have 1 left, so we've changed the quantity to 1.", why: "Fixes it for them, then says so." }
+  - { type: edge, title: "Delivery option not available", old: "Shipping method unavailable", new: "Next day delivery isn't available to BT postcodes. Standard delivery arrives Monday 25 November.", why: "Explains why, and gives the best option left, with its date." }
+  - { type: empty, title: "Empty basket", old: "Your cart is empty.", new: "Your basket is empty. Items you add stay here for 30 days, even if you leave.", why: "Comes with a “Browse new in” button, so it isn't a dead end." }
+  - { type: edge, title: "Payment taking a while", old: "Please wait...", new: "Taking your payment. This can take up to 30 seconds. Stay on this page.", why: "Says how long, and what to do. Announced to screen readers." }
+  - { type: edge, title: "Left the checkout open", old: "Session expired", new: "For your security, we cleared your card details after 15 minutes. Your basket and address are saved.", why: "Says what was lost and, more importantly, what wasn't." }
+---
+<div id="top"></div>
+
+<section class="hero" aria-labelledby="title">
+  <div class="wrap hero__grid">
+    <div>
+      <p class="eyebrow">Content design case study · UX writing</p>
+      <h1 id="title">Every word between “add to basket” and <span class="pink">“order placed”</span></h1>
+      <p class="lede">I audited and rewrote all the microcopy in a homeware shop's checkout: buttons, labels, delivery options, errors and empty states. The goal was to help people pay quickly and feel sure they're getting what they expect.</p>
+      <ul class="chips" aria-label="Skills shown">
+        <li>Microcopy</li><li>Error messages</li><li>Empty states</li><li>Calls to action</li><li>Accessibility</li>
+      </ul>
+      <div class="button-row">
+        <a class="button" href="#screens">Compare before and after</a>
+        <a class="button button--ghost" href="#inventory">Read the case study</a>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="receipt">
+        <div class="receipt__shop">FERNHILL HOME</div>
+        <div class="receipt__row"><span>Stoneware table lamp</span><span>£24.00</span></div>
+        <div class="receipt__row"><span>Linen cushion cover</span><span>£14.50</span></div>
+        <div class="receipt__row"><span>Standard delivery</span><span>£4.00</span></div>
+        <div class="receipt__rule"></div>
+        <div class="receipt__row receipt__total"><span>Total</span><span>£42.50</span></div>
+        <div class="receipt__rule"></div>
+        <div class="receipt__row"><span>Arrives</span><span>Fri 22 Nov</span></div>
+      </div>
+      <span class="sticker sticker--old">Submit</span>
+      <span class="sticker">Pay £42.50</span>
+    </div>
+  </div>
+</section>
+
+<section class="band band--tight" aria-label="Project summary">
+  <div class="wrap">
+    <dl class="meta">
+      <div><dt>My role</dt><dd>Content designer, self-initiated</dd></div>
+      <div><dt>Shop</dt><dd>Fernhill Home, a fictional homeware shop</dd></div>
+      <div><dt>Made</dt><dd>Inventory, copy deck, 12 edge states, annotated screens</dd></div>
+      <div><dt>Standards</dt><dd>WCAG 2.2 AA, GOV.UK error message guidance</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="band band--brand" aria-labelledby="numbers">
+  <div class="wrap">
+    <h2 id="numbers" class="visually-hidden">Results at a glance</h2>
+    <ul class="stats">
+      <li class="stat"><span class="stat__value">30</span><span class="stat__label">pieces of interface text audited across 4 screens</span></li>
+      <li class="stat"><span class="stat__value">25</span><span class="stat__label">rated unclear or missing</span></li>
+      <li class="stat"><span class="stat__value">12</span><span class="stat__label">error, empty and edge states written from scratch</span></li>
+      <li class="stat"><span class="stat__value">0</span><span class="stat__label">buttons that say “Submit” or just “Continue”</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="brief">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">The brief</span>
+      <h2 id="brief">Small words, big drop-off</h2>
+      <p>Checkouts lose people at the last step. Often it's not the design but the words: a surprise delivery cost, a button that doesn't say what it does, or an error that doesn't say how to fix it.</p>
+    </div>
+    <div class="grid grid--2">
+      <div class="card card--soft">
+        <p class="need-label">User need</p>
+        <p class="need">“I want to pay quickly and feel sure I'm getting what I expect.”</p>
+      </div>
+      <div class="card card--soft">
+        <p class="need-label">Business need</p>
+        <p class="need">Fewer abandoned baskets, and fewer “where's my order?” contacts.</p>
+      </div>
+    </div>
+    <p class="measure" style="margin-top:2rem;color:var(--muted)">The before copy is a composite of weak messages that are common in UK small and mid-size retailers' checkouts. I combined them into one fictional shop, Fernhill Home, so no single retailer is singled out.</p>
+  </div>
+</section>
+
+<section class="band band--surface" id="screens" aria-labelledby="screens-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Artefact 1 · Annotated screens</span>
+      <h2 id="screens-title">Switch between before and after</h2>
+      <p>The 4 checkout screens with the copy in place. Numbers link each change to the notes underneath.</p>
+    </div>
+    <div class="demo">
+      <fieldset class="switch">
+        <legend>Show the checkout copy</legend>
+        <input type="radio" name="version" id="v-before" value="before"><label for="v-before">Before</label>
+        <input type="radio" name="version" id="v-after" value="after" checked><label for="v-after">After</label>
+      </fieldset>
+
+      <div class="screens">
+        <section class="screen" aria-label="Basket screen">
+          <div class="screen__step"><span>1 / Basket</span><span>fernhill.example</span></div>
+          <div class="screen__body">
+            <h3><span data-v="before">Your Cart (2)</span><span data-v="after">Your basket (2 items)</span></h3>
+            <div class="s-item"><span class="s-thumb s-thumb--lamp"></span><div>Stoneware table lamp<div class="s-small"><span data-v="before">Qty: 1</span><span data-v="after">Quantity: 1</span></div><span class="s-link">Remove</span><span data-v="after"><span class="p">1</span></span></div><span>£24.00</span></div>
+            <div class="s-item"><span class="s-thumb"></span><div>Linen cushion cover, sage<div class="s-small"><span data-v="before">Qty: 1</span><span data-v="after">Quantity: 1</span></div><span class="s-link">Remove</span></div><span>£14.50</span></div>
+            <span class="s-label"><span data-v="before">&nbsp;</span><span data-v="after">Promo code (optional) <span class="p">2</span></span></span>
+            <span class="s-input"><span data-v="before" class="s-input--ph">Enter code</span><span data-v="after">&nbsp;</span></span>
+            <div class="s-row" style="margin-top:.7rem"><span>Subtotal</span><span>£38.50</span></div>
+            <div class="s-row"><span data-v="before">Shipping <span class="p p--old">1</span></span><span data-v="after">Delivery <span class="p">3</span></span><span data-v="before">Calculated at checkout</span><span data-v="after">from £4.00</span></div>
+            <p class="s-note" data-v="after">Order today and it arrives by Friday 22 November.</p>
+            <span class="s-btn"><span data-v="before">Proceed to Checkout</span><span data-v="after">Go to checkout</span></span>
+          </div>
+        </section>
+
+        <section class="screen" aria-label="Delivery screen">
+          <div class="screen__step"><span>2 / Delivery</span><span>fernhill.example</span></div>
+          <div class="screen__body">
+            <h3>Delivery</h3>
+            <span class="s-label"><span data-v="before">&nbsp;</span><span data-v="after">Postcode <span class="p">4</span></span></span>
+            <span class="s-input s-input--err"><span data-v="before" class="s-input--ph">Postcode*</span><span data-v="after">LS6 2AB</span></span>
+            <span class="s-err s-err--vague" data-v="before">Address not found <span class="p p--old">2</span></span>
+            <span class="s-err" data-v="after">We can't find any addresses for LS6 2AB. Check the postcode, or enter your address manually. <span class="p">5</span></span>
+            <span class="s-link" data-v="after">Enter address manually</span>
+            <span class="s-label">&nbsp;</span>
+            <div class="s-radio on"><span data-v="before">Standard (3-5 working days) £4.00 <span class="p p--old">3</span></span><span data-v="after"><strong>Standard delivery, £4.00</strong><br>Arrives Friday 22 November <span class="p">6</span></span></div>
+            <div class="s-radio"><span data-v="before">Express £7.00</span><span data-v="after"><strong>Next day delivery, £7.00</strong><br>Order by 8pm for Thursday 21 November</span></div>
+            <div class="s-radio"><span data-v="before">Click &amp; Collect</span><span data-v="after"><strong>Collect from a Fernhill shop, free</strong><br>Ready from Thursday 21 November</span></div>
+            <span class="s-btn"><span data-v="before">Continue</span><span data-v="after">Continue to payment</span></span>
+          </div>
+        </section>
+
+        <section class="screen" aria-label="Payment screen">
+          <div class="screen__step"><span>3 / Payment</span><span>fernhill.example</span></div>
+          <div class="screen__body">
+            <h3>Payment</h3>
+            <span class="s-label"><span data-v="before">&nbsp;</span><span data-v="after">Card number</span></span>
+            <span class="s-input"><span data-v="before" class="s-input--ph">Card number</span><span data-v="after">&nbsp;</span></span>
+            <span class="s-label"><span data-v="before">&nbsp;</span><span data-v="after">Expiry date</span></span>
+            <span class="s-hint" data-v="after">For example, 08/27</span>
+            <span class="s-input" style="width:6rem"><span data-v="before" class="s-input--ph">MM/YY</span><span data-v="after">&nbsp;</span></span>
+            <span class="s-label"><span data-v="before">&nbsp;</span><span data-v="after">Security code <span class="p">7</span></span></span>
+            <span class="s-hint" data-v="after">The last 3 numbers on the back of your card</span>
+            <span class="s-input" style="width:6rem"><span data-v="before" class="s-input--ph">CVV <span class="p p--old">4</span></span><span data-v="after">&nbsp;</span></span>
+            <p class="s-note s-check"><span data-v="before">Billing address same as shipping</span><span data-v="after">Billing address is the same as delivery address</span></p>
+            <div class="s-row s-total"><span>Total</span><span>£42.50</span></div>
+            <span class="s-btn s-btn--pink"><span data-v="before">Submit <span class="p p--old">5</span></span><span data-v="after">Pay £42.50 <span class="p">8</span></span></span>
+          </div>
+        </section>
+
+        <section class="screen" aria-label="Confirmation screen">
+          <div class="screen__step"><span>4 / Confirmation</span><span>fernhill.example</span></div>
+          <div class="screen__body">
+            <div class="s-panel">
+              <h3 style="margin:0"><span data-v="before">Thank you for your order!</span><span data-v="after">Order placed</span></h3>
+              <span class="s-small"><span data-v="before">Order #FH-20931</span><span data-v="after">Your order number is FH-20931</span></span>
+            </div>
+            <p data-v="before">You will receive a confirmation email shortly. <span class="p p--old">6</span></p>
+            <div data-v="after">
+              <p>Thanks, Sam. We've emailed your confirmation to sam@example.com.</p>
+              <p><strong>Arrives Friday 22 November</strong> by standard delivery. <span class="p">9</span></p>
+              <p>We'll email you again when it's on its way, with a tracking link.</p>
+              <p class="s-small">You can change or cancel your order until 8pm today, in <span class="s-link">Your orders</span>. <span class="p">10</span></p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <ol class="pinlist pinlist--after" aria-label="Notes on the new copy">
+        <li><span class="p">1</span><p><strong>Remove</strong> stays short on screen, but screen readers hear “Remove stoneware table lamp”.</p></li>
+        <li><span class="p">2</span><p><strong>A visible label</strong> marked optional, so nobody thinks they need a code to buy.</p></li>
+        <li><span class="p">3</span><p><strong>Delivery cost and date on the basket</strong>, before people commit to checking out.</p></li>
+        <li><span class="p">4</span><p><strong>Labels stay visible</strong> above every field, instead of placeholders that vanish.</p></li>
+        <li><span class="p">5</span><p><strong>Errors repeat what people typed</strong>, say what to do, and use an icon as well as colour.</p></li>
+        <li><span class="p">6</span><p><strong>Real dates</strong> for every delivery option, never “3-5 working days”.</p></li>
+        <li><span class="p">7</span><p><strong>Plain words with a hint</strong>: “Security code”, and where to find it.</p></li>
+        <li><span class="p">8</span><p><strong>The button says what happens</strong>: it takes £42.50.</p></li>
+        <li><span class="p">9</span><p><strong>The delivery date again</strong>, because that's what people check first.</p></li>
+        <li><span class="p">10</span><p><strong>How to change the order</strong>, and until when, which heads off contact centre calls.</p></li>
+      </ol>
+      <ol class="pinlist pinlist--before" aria-label="Problems with the old copy">
+        <li><span class="p p--old">1</span><p><strong>Delivery cost hidden</strong> until the second screen, the most common reason people abandon a basket.</p></li>
+        <li><span class="p p--old">2</span><p><strong>“Address not found”</strong>, with no next step and no way to type the address.</p></li>
+        <li><span class="p p--old">3</span><p><strong>“3-5 working days”</strong> makes people work out the date themselves.</p></li>
+        <li><span class="p p--old">4</span><p><strong>Placeholders instead of labels</strong>, and jargon like “CVV”.</p></li>
+        <li><span class="p p--old">5</span><p><strong>“Submit”</strong> doesn't say it takes money, or how much.</p></li>
+        <li><span class="p p--old">6</span><p><strong>No delivery date and no next steps</strong> after paying.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="inventory" aria-labelledby="inventory-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Artefact 2 · Microcopy inventory</span>
+      <h2 id="inventory-title">30 pieces of text, rated</h2>
+      <p>Every piece of interface text in the flow, where it appears, and whether it does its job: fine, unclear, or missing where people need something.</p>
+    </div>
+    <ul class="legend" aria-label="Key">
+      <li><span class="rating rating--fine">Fine</span> 5</li>
+      <li><span class="rating rating--unclear">Unclear</span> 20</li>
+      <li><span class="rating rating--missing">Missing</span> 5</li>
+    </ul>
+    <div class="table-wrap" role="region" aria-label="Microcopy inventory" tabindex="0">
+      <table class="data-table">
+        <thead><tr><th scope="col">Screen</th><th scope="col">Element</th><th scope="col">Current copy</th><th scope="col">Rating</th><th scope="col">Why</th></tr></thead>
+        <tbody>
+          {%- for r in inventory %}
+          <tr><td>{{ r[0] }}</td><td>{{ r[1] }}</td><td class="mono">{{ r[2] }}</td><td><span class="rating rating--{{ r[3] }}">{{ r[3] | capitalize }}</span></td><td>{{ r[4] }}</td></tr>
+          {%- endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="band band--surface" id="deck" aria-labelledby="deck-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Artefact 3 · Copy deck</span>
+      <h2 id="deck-title">What developers build from</h2>
+      <p>The new copy for every element, with a character limit and notes on anything that changes with the order, like dates and totals.</p>
+    </div>
+    <div class="table-wrap" role="region" aria-label="Copy deck" tabindex="0">
+      <table class="data-table">
+        <thead><tr><th scope="col">Screen</th><th scope="col">Element</th><th scope="col">Current</th><th scope="col">New copy</th><th scope="col">Limit</th><th scope="col">Notes for developers</th></tr></thead>
+        <tbody>
+          {%- for r in deck %}
+          <tr><td>{{ r[0] }}</td><td>{{ r[1] }}</td><td class="mono">{{ r[2] }}</td><td><strong>{{ r[3] }}</strong></td><td class="mono">{{ r[4] }}</td><td>{{ r[5] }}</td></tr>
+          {%- endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="states" aria-labelledby="states-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Artefact 4 · Error, empty and edge states</span>
+      <h2 id="states-title">For when things don't go to plan</h2>
+      <p>The moments that most often go unwritten, and the ones where people most need help. Each says what happened and what to do next, without blaming anyone.</p>
+    </div>
+    <div class="states">
+      {%- for s in states %}
+      <article class="state">
+        <div class="state__head"><h3>{{ s.title }}</h3><span class="state__type state__type--{{ s.type }}">{{ s.type }}</span></div>
+        <div class="state__body">
+          <p class="state__old"><span class="visually-hidden">Before: </span>{{ s.old }}</p>
+          <p class="state__new"><span class="visually-hidden">After: </span>{{ s.new }}</p>
+          <p class="state__why">{{ s.why }}</p>
+        </div>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="band band--soft" id="decisions" aria-labelledby="decisions-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Content decisions</span>
+      <h2 id="decisions-title">The thinking behind the words</h2>
+    </div>
+    <div class="grid grid--2">
+      <article class="card">
+        <span class="card__num">1</span>
+        <h3>Buttons say what happens</h3>
+        <p>A button is a promise. “Pay £42.50” tells people exactly what pressing it does, and the amount is a last check before money moves. “Continue to payment” says where you're going.</p>
+        <div class="ba"><p class="ba__side ba__before"><span>Before</span>Submit</p><span class="ba__arrow" aria-hidden="true">→</span><p class="ba__side ba__after"><span>After</span>Pay £42.50</p></div>
+      </article>
+      <article class="card">
+        <span class="card__num">2</span>
+        <h3>Errors fix things, they don't blame</h3>
+        <p>Each error says what went wrong and what to do. Payment errors answer “have I been charged?” first. No error says “invalid”, “oops” or “you entered”.</p>
+        <div class="ba"><p class="ba__side ba__before"><span>Before</span>Transaction declined. Error code 05.</p><span class="ba__arrow" aria-hidden="true">→</span><p class="ba__side ba__after"><span>After</span>Your bank declined the payment, so you have not been charged.</p></div>
+      </article>
+      <article class="card">
+        <span class="card__num">3</span>
+        <h3>Delivery cost and date, as early as possible</h3>
+        <p>Unexpected extra costs are the most common reason people abandon a checkout, according to <a href="https://baymard.com/lists/cart-abandonment-rate">Baymard Institute's research</a>. So the basket shows the delivery price and the date it arrives, before anyone starts the checkout.</p>
+      </article>
+      <article class="card">
+        <span class="card__num">4</span>
+        <h3>Labels that stay, errors that don't rely on colour</h3>
+        <p>Placeholder text disappears as you type and is often too faint to read, so every field has a visible label. Errors have an icon and text, not just a red border. Every link and button makes sense read aloud on its own.</p>
+      </article>
+      <article class="card">
+        <span class="card__num">5</span>
+        <h3>Mark what's optional, not what's required</h3>
+        <p>Almost every field is needed, so 10 asterisks are noise. Marking the 2 optional fields says the same thing with less, and follows the GOV.UK Design System pattern.</p>
+      </article>
+      <article class="card">
+        <span class="card__num">6</span>
+        <h3>After paying, answer the next 3 questions</h3>
+        <p>When will it arrive? How will I know it's coming? Can I change it? The confirmation answers all 3, because each unanswered one becomes a “where's my order?” email.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="results" aria-labelledby="results-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">How I checked it</span>
+      <h2 id="results-title">Every word against a standard</h2>
+    </div>
+    <ul class="checks">
+      <li><div><strong>Out of context</strong><span>Every button and link makes sense read alone, as a screen reader lists them.</span></div></li>
+      <li><div><strong>Character limits</strong><span>Every line in the copy deck fits its limit, including the longest product names.</span></div></li>
+      <li><div><strong>Error guidance</strong><span>Every error checked against the GOV.UK pattern: what went wrong, how to fix it.</span></div></li>
+      <li><div><strong>Accessibility</strong><span>This page passes axe with no WCAG 2.2 AA issues, and works at phone width.</span></div></li>
+    </ul>
+    <div class="grid grid--2" style="margin-top:3rem">
+      <div class="card card--soft">
+        <h3>How I'd test it with shoppers</h3>
+        <p>An A/B test on the basket page, comparing the delivery date line with “Calculated at checkout”, measured by how many people reach payment. Then 5 moderated sessions where people try a declined card and an expired code, to check the messages calm them rather than worry them.</p>
+      </div>
+      <div class="card card--soft">
+        <h3>What I'd do next</h3>
+        <p>Write the emails that follow the order: confirmation, dispatch and delivery. They should use the same words and dates as the confirmation page, so the promise made at checkout is kept everywhere.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band band--surface band--tight" aria-label="More projects">
+  <div class="wrap next">
+    <div>
+      <span class="eyebrow">Next project</span>
+      <h2>Restructuring a GP surgery website around patients' tasks</h2>
+    </div>
+    <a class="button" href="/navigation/">See the navigation project</a>
+  </div>
+</section>

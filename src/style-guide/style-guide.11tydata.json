@@ -1,0 +1,19 @@
+{
+  "layout": "portal.njk",
+  "portal": {
+    "theme": "sunny",
+    "mark": "F",
+    "name": "Content style guide",
+    "title": "A content style guide for a small gym booking app",
+    "description": "How Komal Singh wrote a short content style guide for a gym booking app: content audit, voice principles, tone scale, style rules and content patterns.",
+    "fonts": "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=DM+Sans:wght@400;500;700&display=swap",
+    "sections": [
+      { "id": "audit", "text": "Audit" },
+      { "id": "voice", "text": "Voice" },
+      { "id": "tone", "text": "Tone scale" },
+      { "id": "rules", "text": "Style rules" },
+      { "id": "patterns", "text": "Patterns" },
+      { "id": "decisions", "text": "Decisions" }
+    ]
+  }
+}

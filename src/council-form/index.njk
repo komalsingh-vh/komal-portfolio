@@ -1,0 +1,363 @@
+---
+protocol:
+  - { q: "Not asked", why: "Decides whether anyone can get the discount at all", who: "Council tax staff", tag: change, decision: "Add, and ask first", now: "Does anyone else aged 18 or over live with you?" }
+  - { q: "Name & Address (top box)", why: "Finds the account", who: "Council tax staff", tag: move, decision: "Merge with question 1", now: "What is the address of the home you're applying for?" }
+  - { q: "Ctax Account Number", why: "Finds the account faster, with fewer mistakes", who: "Council tax staff", tag: keep, decision: "Keep, but optional", now: "What is your council tax account number? With a hint on where to find it" }
+  - { q: "1. Address of property (if different)", why: "The discount applies to a home, not a person", who: "Council tax staff", tag: move, decision: "Merge", now: "One address question. People give the address they live at" }
+  - { q: "2. Full name of resident claiming discount", why: "Matches the person to the account", who: "Council tax staff", tag: keep, decision: "Keep", now: "What is your full name?" }
+  - { q: "3. Date you became sole occupier", why: "Sets the date the discount starts", who: "Council tax staff", tag: change, decision: "Rewrite", now: "When did you become the only adult living there?" }
+  - { q: "4. Names and dates of birth of 16 and 17 year olds", why: "The discount is reviewed when they turn 18", who: "Council tax staff", tag: change, decision: "Rewrite, yes or no first", now: "Does anyone aged 16 or 17 live with you?" }
+  - { q: "5. Only adult because of bereavement?", why: "Explains the change, and skips questions about who left", who: "Council tax staff", tag: move, decision: "Merge with 6", now: "Why are you now the only adult living there? 4 options" }
+  - { q: "6. Always been the only resident?", why: "As above", who: "Council tax staff", tag: move, decision: "Merge with 5", now: "As above" }
+  - { q: "7. Name, move-out date and new address of who left", why: "Checks the claim and bills them at their new home", who: "Council tax staff, fraud team", tag: keep, decision: "Keep, only if someone moved out", now: "3 short pages, with “I do not know their new address”" }
+  - { q: "7a. On what basis are they living at their new address?", why: "A loose check that the move is genuine", who: "Fraud team, occasionally", tag: cut, decision: "Cut", now: "The new address does the same job. Few people know how to answer" }
+  - { q: "7b. Is the change permanent? Return date", why: "Someone away for a short time may still count", who: "Council tax staff", tag: change, decision: "Rewrite", now: "Are they planning to move back?" }
+  - { q: "7c. Ongoing legal interest in the property", why: "Decides who pays the bill, not who gets the discount", who: "A different process", tag: cut, decision: "Cut", now: "Belongs in a “someone has moved out” process. It also had no Yes or No box" }
+  - { q: "7d. Removing their name from the title or tenancy", why: "Same as 7c", who: "A different process", tag: cut, decision: "Cut", now: "As above" }
+  - { q: "Full name in capitals, date, signature", why: "Proves who sent the paper form", who: "No one, online", tag: cut, decision: "Cut", now: "A declaration and an “Accept and send” button. The date is recorded automatically" }
+  - { q: "Tel no (if any queries)", why: "Contact if something's unclear", who: "Council tax staff", tag: change, decision: "Rewrite, add email", now: "Email for the confirmation, and an optional phone number" }
+errors:
+  - [ "Anyone else aged 18 or over", "Nothing selected", "Select yes if anyone else aged 18 or over lives with you" ]
+  - [ "Address", "Address line 1 empty", "Enter address line 1, typically the building and street" ]
+  - [ "Address", "Town or city empty", "Enter town or city" ]
+  - [ "Address", "Postcode empty", "Enter your postcode" ]
+  - [ "Address", "Postcode in the wrong format", "Enter a real postcode, like WD6 1WA" ]
+  - [ "Account number", "Letters or symbols", "Council tax account number must only include numbers" ]
+  - [ "Full name", "Empty", "Enter your full name" ]
+  - [ "Why you live alone", "Nothing selected", "Select why you are now the only adult living there" ]
+  - [ "Why you live alone", "“Something else” with no details", "Tell us why you are now the only adult living there" ]
+  - [ "Date", "Nothing entered", "Enter the date you became the only adult living there" ]
+  - [ "Date", "Day, month or year missing", "Date you became the only adult living there must include a month" ]
+  - [ "Date", "Not a real date, like 31 2 2024", "Date you became the only adult living there must be a real date" ]
+  - [ "Date", "In the future", "Date you became the only adult living there must be today or in the past" ]
+  - [ "Who moved out", "Name empty", "Enter the full name of the person who moved out" ]
+  - [ "Their new address", "Empty, and “I don't know” not ticked", "Enter their new address, or select “I do not know their new address”" ]
+  - [ "Moving back", "Nothing selected", "Select yes if they are planning to move back" ]
+  - [ "Moving back", "Yes, but no date", "Enter the date they are planning to move back" ]
+  - [ "16 or 17 year olds", "Nothing selected", "Select yes if anyone aged 16 or 17 lives with you" ]
+  - [ "16 or 17 year olds", "Yes, but no name", "Enter their full name" ]
+  - [ "16 or 17 year olds", "Date of birth not real", "Date of birth must be a real date" ]
+  - [ "Contact details", "Email empty", "Enter your email address" ]
+  - [ "Contact details", "Email in the wrong format", "Enter an email address in the correct format, like name@example.com" ]
+  - [ "Contact details", "Phone has letters", "Enter a phone number, like 01632 960 001 or 07700 900 982" ]
+---
+<div id="top"></div>
+
+<section class="hero" aria-labelledby="title">
+  <div class="wrap hero__grid">
+    <div>
+      <p class="eyebrow">Content design case study · Public service form</p>
+      <h1 id="title">From a 2-page paper form to a service people can <span class="hl">finish in one go</span></h1>
+      <p class="lede">I redesigned a council's single person discount form using GOV.UK patterns. I cut the questions the council didn't need, put eligibility first, and wrote an error message for everything that can go wrong.</p>
+      <ul class="chips" aria-label="Skills shown">
+        <li>Question protocol</li><li>One thing per page</li><li>Error messages</li><li>GOV.UK Design System</li><li>Accessibility</li>
+      </ul>
+      <div class="button-row">
+        <a class="button" href="/council-form/prototype/">Try the prototype</a>
+        <a class="button button--ghost" href="#problem">Read the case study</a>
+      </div>
+    </div>
+    <figure class="phone-fig" aria-hidden="true">
+      <div class="phone" inert><iframe src="/council-form/prototype/others-18/?preview=1" title="Prototype: the first question, does anyone else aged 18 or over live with you" loading="lazy"></iframe></div>
+    </figure>
+  </div>
+</section>
+
+<section class="band band--tight" aria-label="Project summary">
+  <div class="wrap">
+    <dl class="meta">
+      <div><dt>My role</dt><dd>Content designer, self-initiated</dd></div>
+      <div><dt>Original</dt><dd>Hertsmere Borough Council PDF form</dd></div>
+      <div><dt>Made</dt><dd>Question protocol, flow, error messages, prototype</dd></div>
+      <div><dt>Standards</dt><dd>GOV.UK Design System, WCAG 2.2 AA</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="band band--brand" aria-labelledby="results-strip">
+  <div class="wrap">
+    <h2 id="results-strip" class="visually-hidden">Results at a glance</h2>
+    <ul class="stats">
+      <li class="stat"><span class="stat__value">22 → 8</span><span class="stat__label">blanks on paper, down to 8 short questions for someone who has always lived alone</span></li>
+      <li class="stat"><span class="stat__value">4</span><span class="stat__label">questions cut after the question protocol</span></li>
+      <li class="stat"><span class="stat__value">23</span><span class="stat__label">specific error messages, instead of none</span></li>
+      <li class="stat"><span class="stat__value">0</span><span class="stat__label">accessibility issues found by axe, on every page</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="brief">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">The brief</span>
+      <h2 id="brief">25% off council tax, if you can get through the form</h2>
+      <p>If you're the only adult living in your home, you can get 25% off your council tax. To get it, residents have to tell the council they live alone, and from when.</p>
+    </div>
+    <div class="grid grid--2">
+      <div class="card card--soft">
+        <p class="need-label">User need</p>
+        <p class="need">“As a resident, I want to apply without phoning the council, so I can get it done in one go.”</p>
+      </div>
+      <div class="card card--soft">
+        <p class="need-label">Business need</p>
+        <p class="need">Fewer incomplete applications, and fewer calls asking “what does this mean?”</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band band--surface" id="problem" aria-labelledby="problem-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">The original form</span>
+      <h2 id="problem-title">497 words, 22 blanks and no way to know if you've got it right</h2>
+      <p>I started with <a href="https://www.hertsmere.gov.uk/Documents/01-Benefits--Council-Tax/Council-Tax/Council-Tax-Single-Adult-Discount-Application.pdf">Hertsmere Borough Council's single adult discount form</a>, a PDF people print, fill in by hand and post. Most councils have one like it.</p>
+    </div>
+    <div class="split">
+      <div class="paper" aria-label="A recreation of the original form, with numbered problems">
+        <div class="paper__head"><span>Name &amp; Address:</span><span>Ctax Account Number: <span class="pin">6</span></span></div>
+        <p class="paper__title">Single Adult Discount Application</p>
+        <p class="paper__intro">...only one adult resident and he/she is not disregarded for the purposes of council tax. <span class="pin">1</span></p>
+        <div class="paper__row"><b>1. Address of property (if different from above):</b><span class="paper__line"></span></div>
+        <div class="paper__row"><b>2. Full name of resident claiming discount:</b><span class="paper__line"></span></div>
+        <div class="paper__row"><b>3. Date you became sole occupier:</b><span class="paper__line"></span><span class="pin">6</span></div>
+        <div class="paper__row"><b>4. Names and dates of birth of residents aged 16 or 17</b><span class="paper__line"></span></div>
+        <div class="paper__row"><b>5. Only adult as a result of bereavement?</b><span class="paper__boxes">Yes ☐ No ☐</span><span class="pin">4</span></div>
+        <div class="paper__row"><b>6. Always been the only resident?</b><span class="paper__boxes">Yes ☐ No ☐</span></div>
+        <p class="paper__note">If you have answered Yes to either question 5 or 6, please go to the declaration overleaf. <span class="pin">3</span></p>
+        <div class="paper__row"><b>7. Full name / Date of Vacation / Address they now live at</b><span class="paper__line"></span></div>
+        <div class="paper__row"><b>On what basis are they living at their new address?</b><span class="paper__line"></span></div>
+        <div class="paper__row"><b>Any ongoing legal interest in the property? If yes please give details</b><span class="paper__line"></span><span class="pin">5</span></div>
+        <p class="paper__note">Please turn over</p>
+        <div class="paper__row"><b>Full Name (in capitals) / Signature / Tel no</b><span class="paper__line"></span><span class="pin">7</span></div>
+        <p class="paper__note">...in accordance with the Data Protection Act 1998... <span class="pin">8</span></p>
+      </div>
+      <ol class="problems">
+        <li><span class="pin">1</span><div><h3>Written for the council, not the resident</h3><p>“Disregarded”, “sole occupier”, “Date of Vacation” and “legal interest” are legal terms the form never explains.</p></div></li>
+        <li><span class="pin">2</span><div><h3>No eligibility check</h3><p>The one question that decides everything, whether anyone else aged 18 or over lives there, is never asked. People can fill in both pages and still be refused.</p></div></li>
+        <li><span class="pin">3</span><div><h3>Routing that's easy to miss</h3><p>Question 7 only applies to some people, but the instruction to skip it sits in small text between questions.</p></div></li>
+        <li><span class="pin">4</span><div><h3>Two yes or no questions doing one job</h3><p>Questions 5 and 6 both ask why you live alone. One question with 4 options does it better.</p></div></li>
+        <li><span class="pin">5</span><div><h3>A question you can't answer</h3><p>It says “If yes please give details”, but there are no Yes or No boxes to tick.</p></div></li>
+        <li><span class="pin">6</span><div><h3>No help with formats</h3><p>No date examples, and nothing to say where to find the account number. Missing answers mean letters and calls back and forth.</p></div></li>
+        <li><span class="pin">7</span><div><h3>Things only paper needs</h3><p>Signatures, capital letters and “Please turn over” don't belong in an online service.</p></div></li>
+        <li><span class="pin">8</span><div><h3>An out-of-date privacy notice</h3><p>It cites the Data Protection Act 1998, replaced in 2018, and has the typo “personal date”.</p></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="protocol" aria-labelledby="protocol-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Artefact 1 · Question protocol</span>
+      <h2 id="protocol-title">Every question has to earn its place</h2>
+      <p>For each question I asked: what decision does the council make with this answer, who uses it, and does everyone need to answer it? I checked my reasons against the form, the council's own pages and the <a href="https://www.gov.uk/council-tax/discounts-for-people-who-live-alone">GOV.UK guidance on council tax discounts</a>.</p>
+    </div>
+    <ul class="legend" aria-label="Key">
+      <li><span class="tag tag--keep">Keep</span> asked as before</li>
+      <li><span class="tag tag--change">Rewrite</span> or add</li>
+      <li><span class="tag tag--move">Merge</span> with another question</li>
+      <li><span class="tag tag--cut">Cut</span> from this form</li>
+    </ul>
+    <div class="table-wrap" role="region" aria-label="Question protocol" tabindex="0">
+      <table class="data-table">
+        <caption>15 things the original form asks for: 7 kept or rewritten, 4 merged into 2, 4 cut, plus 2 new questions</caption>
+        <thead><tr><th scope="col">Original question</th><th scope="col">Why the council asks</th><th scope="col">Who uses it</th><th scope="col">Decision</th><th scope="col">New question</th></tr></thead>
+        <tbody>
+          {%- for row in protocol %}
+          <tr><td>{{ row.q }}</td><td>{{ row.why }}</td><td>{{ row.who }}</td><td><span class="tag tag--{{ row.tag }}">{{ row.decision }}</span></td><td>{{ row.now }}</td></tr>
+          {%- endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div class="grid grid--2" style="margin-top:2rem">
+      <div class="card">
+        <h3>The hardest cut</h3>
+        <p>The “legal interest” questions matter: a joint owner who moves out may still have to pay. But that's about who pays the bill, not whether the person left behind gets the discount. Asking everyone makes the form harder to protect a case that affects a few, so it belongs in the council's separate “someone has moved out” process.</p>
+      </div>
+      <div class="card">
+        <h3>What it changed</h3>
+        <p>Someone who has always lived alone now answers 8 short questions. Someone whose partner moved out answers 11, and the extra 3 are there only because the council needs them to check the claim.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band band--surface" id="flow" aria-labelledby="flow-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Artefact 2 · Page-by-page flow</span>
+      <h2 id="flow-title">One thing per page, and eligibility first</h2>
+      <p>Each page asks one question, so people can focus, errors are easy to fix, and the service can skip questions that don't apply. Dashed pages only appear for some people.</p>
+    </div>
+    <ol class="flow">
+      <li>Start page<small>Who can apply, what you need, about 5 minutes</small></li>
+      <li>Does anyone else aged 18 or over live with you?<small>Yes: “You cannot get a single person discount” with other options</small></li>
+      <li>The address you're applying for</li>
+      <li>Council tax account number<small>Optional</small></li>
+      <li>Your full name</li>
+      <li>Why you're now the only adult living there<small>Moved out, died, always alone, something else</small></li>
+      <li>When you became the only adult<small>Or “When did you move in?”</small></li>
+      <li class="is-branch">Who moved out<small>Only if someone moved out</small></li>
+      <li class="is-branch">Their new address<small>Or “I do not know their new address”</small></li>
+      <li class="is-branch">Are they planning to move back?</li>
+      <li>Anyone aged 16 or 17 living with you?</li>
+      <li>Your contact details</li>
+      <li>Check your answers and declaration</li>
+      <li>Application sent<small>Reference number and what happens next</small></li>
+    </ol>
+  </div>
+</section>
+
+<section class="band" id="decisions" aria-labelledby="decisions-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Content decisions</span>
+      <h2 id="decisions-title">The choices behind the words</h2>
+    </div>
+    <div class="grid grid--2">
+      <article class="card">
+        <span class="card__num">1</span>
+        <h3>Eligibility comes first</h3>
+        <p>The question that decides everything wasn't on the original form. Now it's the first thing people see. If the answer is yes, they find out before giving any personal details, and they're pointed to other discounts they might get instead.</p>
+      </article>
+      <article class="card">
+        <span class="card__num">2</span>
+        <h3>One question with radios, instead of two yes or no questions</h3>
+        <p>Radios work because there are only a few likely answers, and the answer decides what comes next. “Something else” opens a text box, so nobody is forced into an answer that isn't true.</p>
+        <div class="ba"><p class="ba__side ba__before"><span>Before</span>Bereavement? Yes / No. Always the only resident? Yes / No</p><span class="ba__arrow" aria-hidden="true">→</span><p class="ba__side ba__after"><span>After</span>Why are you now the only adult living there?</p></div>
+      </article>
+      <article class="card">
+        <span class="card__num">3</span>
+        <h3>A gentler route after a death</h3>
+        <p>If someone chooses “Someone I lived with died”, they're never asked for that person's new address or whether they're moving back. On paper, they had to spot an instruction to skip the section.</p>
+      </article>
+      <article class="card">
+        <span class="card__num">4</span>
+        <h3>Free text only where answers really vary</h3>
+        <p>Names and addresses are text fields. Dates use separate day, month and year boxes so nobody guesses a format. Yes or no questions use radios, so they can't be left half-answered.</p>
+      </article>
+      <article class="card">
+        <span class="card__num">5</span>
+        <h3>Hint text only where it helps</h3>
+        <p>A hint appears only when it answers something people would otherwise phone about: date formats, who counts as an adult, where to find the account number. Name, address and the “why” question have none. Hints everywhere teach people to skip them.</p>
+        <div class="ba"><p class="ba__side ba__before"><span>Before</span>Date you became sole occupier: ______</p><span class="ba__arrow" aria-hidden="true">→</span><p class="ba__side ba__after"><span>After</span>For example, 27 3 2007</p></div>
+      </article>
+      <article class="card">
+        <span class="card__num">6</span>
+        <h3>A confirmation that says what happens next</h3>
+        <p>The paper form gave no idea what happened after posting it. The confirmation page gives a reference number, says the council will reply by email within 10 working days, and explains what people must tell the council about later.</p>
+      </article>
+    </div>
+
+    <h3 style="margin-top:3rem">Words I replaced</h3>
+    <ul class="swaps">
+      <li><del>sole occupier</del><span aria-hidden="true">→</span><ins>the only adult living there</ins></li>
+      <li><del>Date of Vacation</del><span aria-hidden="true">→</span><ins>When did they move out?</ins></li>
+      <li><del>resident claiming discount</del><span aria-hidden="true">→</span><ins>you</ins></li>
+      <li><del>dwelling, property</del><span aria-hidden="true">→</span><ins>your home</ins></li>
+      <li><del>Ctax Account Number</del><span aria-hidden="true">→</span><ins>council tax account number</ins></li>
+      <li><del>he/she</del><span aria-hidden="true">→</span><ins>they</ins></li>
+      <li><del>not disregarded for the purposes of council tax</del><span aria-hidden="true">→</span><ins>explained in plain words on the start page</ins></li>
+      <li><del>I may be liable to a penalty</del><span aria-hidden="true">→</span><ins>You could be fined</ins></li>
+    </ul>
+  </div>
+</section>
+
+<section class="band band--soft" id="errors" aria-labelledby="errors-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Artefact 3 · Error messages</span>
+      <h2 id="errors-title">Say what went wrong and how to fix it</h2>
+      <p>One specific message for everything that can go wrong, following the <a href="https://design-system.service.gov.uk/components/error-message/">GOV.UK error message guidance</a>. Each uses the words of the question, starts with “Enter” or “Select”, and never says “invalid”, “please” or “oops”.</p>
+    </div>
+    <div class="grid grid--3">
+      <div class="card">
+        <h3>Postcode</h3>
+        <div class="ba"><p class="ba__side ba__before"><span>Typical</span>Invalid entry</p><span class="ba__arrow" aria-hidden="true">→</span><p class="ba__side ba__after"><span>Mine</span>Enter a real postcode, like WD6 1WA</p></div>
+      </div>
+      <div class="card">
+        <h3>Date</h3>
+        <div class="ba"><p class="ba__side ba__before"><span>Typical</span>Please enter a valid date</p><span class="ba__arrow" aria-hidden="true">→</span><p class="ba__side ba__after"><span>Mine</span>Date you became the only adult living there must be today or in the past</p></div>
+      </div>
+      <div class="card">
+        <h3>Radios</h3>
+        <div class="ba"><p class="ba__side ba__before"><span>Typical</span>This field is required</p><span class="ba__arrow" aria-hidden="true">→</span><p class="ba__side ba__after"><span>Mine</span>Select why you are now the only adult living there</p></div>
+      </div>
+    </div>
+    <details class="more">
+      <summary>See all 23 error messages</summary>
+      <div class="table-wrap" role="region" aria-label="All error messages" tabindex="0">
+        <table class="data-table">
+          <thead><tr><th scope="col">Page</th><th scope="col">What went wrong</th><th scope="col">Error message</th></tr></thead>
+          <tbody>
+            {%- for e in errors %}
+            <tr><td>{{ e[0] }}</td><td>{{ e[1] }}</td><td>{{ e[2] }}</td></tr>
+            {%- endfor %}
+          </tbody>
+        </table>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="band band--brand" id="prototype" aria-labelledby="proto-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Artefact 4 · Working prototype</span>
+      <h2 id="proto-title">Try it yourself</h2>
+      <p>A 14-page prototype that works in any browser. It checks your answers, shows each error message, skips questions that don't apply, and lets you change answers from the check your answers page. Nothing you type leaves your browser.</p>
+    </div>
+    <div class="phone-row">
+      <figure class="phone-fig">
+        <div class="phone" inert><iframe src="/council-form/prototype/?preview=1" title="Prototype: start page" loading="lazy"></iframe></div>
+        <figcaption>The start page says who can apply and what you'll need, before anything else.</figcaption>
+      </figure>
+      <figure class="phone-fig">
+        <div class="phone" inert><iframe src="/council-form/prototype/date/?preview=errors" title="Prototype: date question showing an error message" loading="lazy"></iframe></div>
+        <figcaption>Errors appear in a summary at the top and next to the question, in the question's own words.</figcaption>
+      </figure>
+      <figure class="phone-fig">
+        <div class="phone" inert><iframe src="/council-form/prototype/confirmation/?preview=1" title="Prototype: application sent confirmation page" loading="lazy"></iframe></div>
+        <figcaption>The confirmation says what happens next, when, and what to tell the council later.</figcaption>
+      </figure>
+    </div>
+    <p style="text-align:center;margin-top:2.5rem"><a class="button" href="/council-form/prototype/">Open the full prototype</a></p>
+  </div>
+</section>
+
+<section class="band" id="results" aria-labelledby="results-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">How I checked it</span>
+      <h2 id="results-title">Tested against the standards it has to meet</h2>
+    </div>
+    <ul class="checks">
+      <li><div><strong>Keyboard only</strong><span>Every page works with Tab, Space and Enter. The error summary takes focus, and its links jump to the right field.</span></div></li>
+      <li><div><strong>Automated accessibility check</strong><span>Every page, including each error state, passes axe with no WCAG 2.2 AA issues.</span></div></li>
+      <li><div><strong>Phone screens</strong><span>Every page works at 375 pixels wide, without scrolling sideways.</span></div></li>
+      <li><div><strong>Every error message</strong><span>I triggered all 23 in the prototype to check each one shows in the right place.</span></div></li>
+    </ul>
+
+    <div class="grid grid--2" style="margin-top:3rem">
+      <div class="card card--soft">
+        <h3>How I'd test it with residents</h3>
+        <p>5 people who live alone, each applying with the prototype on their own phone. I'd watch where they hesitate, especially on the eligibility question, and time how long it takes. People with more complicated households, like a partner who works away or a lodger, would show whether the hint text is enough.</p>
+      </div>
+      <div class="card card--soft">
+        <h3>What I'd do next</h3>
+        <p>Work with the council on a separate “someone has moved out” form for the questions about who pays the bill. Then design the emails residents get after applying, so the whole journey uses the same words.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band band--surface band--tight" aria-label="Next project">
+  <div class="wrap next">
+    <div>
+      <span class="eyebrow">Next project</span>
+      <h2>Turning a dense repairs page into clear, scannable content</h2>
+    </div>
+    <a class="button" href="/guidance-page/">See the repairs project</a>
+  </div>
+</section>

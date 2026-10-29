@@ -1,0 +1,87 @@
+/* Portal 2: repairs guidance. Warm and practical: terracotta, cream, deep brown. */
+.theme-repairs {
+  --ink: #231a15;
+  --muted: #5e5149;
+  --line: #ead9cc;
+  --paper: #fffaf5;
+  --surface: #fbeee3;
+  --brand: #3b1a0c;
+  --brand-ink: #fff4ea;
+  --brand-soft: #fde3cf;
+  --accent: #c2410c;
+  --accent-ink: #ffffff;
+  --link: #b23c05;
+  --focus: #ffb703;
+  --font-head: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-body: "Source Sans 3", system-ui, sans-serif;
+  --head-weight: 800;
+  --radius: 22px;
+  --radius-sm: 12px;
+  font-size: 1.05rem;
+}
+.theme-repairs body { font-size: 1.12rem; }
+.theme-repairs .portal-brand__mark { background: var(--accent); color: #fff; border-radius: 50%; }
+
+/* Light hero, so this portal doesn't look like the others */
+.theme-repairs .hero { background: radial-gradient(circle at 85% 20%, #ffd8bd 0, transparent 45%), var(--surface); color: var(--ink); }
+.theme-repairs .hero a { color: var(--ink); }
+.theme-repairs .hero .eyebrow { color: var(--link); }
+.theme-repairs .hero .lede { color: var(--muted); }
+.theme-repairs .hero .chips li { background: var(--paper); border-color: var(--line); }
+.theme-repairs .hero .button { color: #fff !important; }
+.theme-repairs .hero .button--ghost { color: var(--ink) !important; }
+.theme-repairs .hero h1 { font-size: clamp(2.4rem, 5.8vw, 4.4rem); letter-spacing: -0.03em; }
+.theme-repairs .orange { color: var(--accent); }
+.theme-repairs .button { color: #fff !important; }
+.theme-repairs .band--brand .button { background: var(--accent); }
+.theme-repairs .stat__value { font-weight: 800; }
+
+/* Hero illustration: the long original page next to the short rewrite */
+.pages { display: flex; gap: 1.5rem; justify-content: center; align-items: flex-start; }
+.page-thumb { width: 44%; max-width: 13rem; background: #fff; border-radius: 14px; padding: 1rem 0.9rem; box-shadow: 0 25px 50px -20px rgb(59 26 12 / 35%); }
+.page-thumb p { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.6rem; }
+.page-thumb i { display: block; height: 6px; border-radius: 3px; background: #e7dbd1; margin-bottom: 6px; }
+.page-thumb i:nth-child(5n) { width: 70%; }
+.page-thumb i:nth-child(7n) { width: 85%; }
+.page-thumb b { display: block; height: 10px; width: 60%; border-radius: 3px; background: #c9b6a7; margin: 12px 0 8px; }
+.page-thumb--after { margin-top: 3rem; }
+.page-thumb--after .alert { height: 44px; border-radius: 8px; border: 3px solid var(--accent); margin-bottom: 12px; background: #fff3ea; }
+.page-thumb--after b { background: var(--accent); }
+.page-thumb .count { display: block; margin-top: 0.8rem; font-family: var(--font-head); font-weight: 800; font-size: 1.4rem; color: var(--ink); }
+
+/* Anatomy of the original page: one bar per section, sized by word count */
+.anatomy { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.7rem; }
+.anatomy li { display: grid; grid-template-columns: minmax(9rem, 15rem) 1fr; gap: 1rem; align-items: center; }
+.anatomy__label { font-weight: 700; line-height: 1.25; }
+.anatomy__label small { display: block; font-weight: 400; color: var(--muted); font-size: 0.9rem; }
+.anatomy__bar { position: relative; height: 2.4rem; border-radius: 10px; background: var(--accent); width: var(--w); min-width: 3.5rem; display: flex; align-items: center; padding: 0 0.75rem; color: #fff; font-weight: 700; font-size: 0.92rem; }
+.anatomy__bar.is-off { background: repeating-linear-gradient(135deg, #b9a79a 0 8px, #a8958a 8px 16px); color: #231a15; }
+.anatomy__bar.is-off span { background: rgb(255 255 255 / 80%); padding: 0 0.35rem; border-radius: 4px; }
+@media (max-width: 40rem) { .anatomy li { grid-template-columns: 1fr; gap: 0.3rem; } }
+.key { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; list-style: none; padding: 0; margin: 1.25rem 0 0; color: var(--muted); }
+.key li { display: flex; align-items: center; gap: 0.5rem; }
+.key i { width: 1.2rem; height: 1.2rem; border-radius: 4px; background: var(--accent); }
+.key i.is-off { background: repeating-linear-gradient(135deg, #b9a79a 0 4px, #a8958a 4px 8px); }
+
+/* The rewritten page */
+.rewrite { max-width: 46rem; margin: 0 auto; font-family: var(--font-body); }
+.rewrite h3 { font-size: 2.2rem; }
+.rewrite h4 { font-size: 1.45rem; margin-top: 2.25rem; }
+.rewrite h5 { font-family: var(--font-head); font-size: 1.15rem; margin: 1.5rem 0 0.5rem; }
+.rewrite ul { padding-left: 1.25rem; }
+.rewrite li { margin-bottom: 0.3rem; }
+.emergency { border: 4px solid var(--accent); background: #fff3ea; border-radius: var(--radius-sm); padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+.emergency h4 { margin-top: 0 !important; }
+.emergency p:last-child { margin-bottom: 0; }
+.rewrite .data-table { min-width: 32rem; }
+.related { border-top: 3px solid var(--accent); padding-top: 1rem; margin-top: 2.5rem; }
+
+/* Step-by-step navigation, based on the GOV.UK pattern */
+.steps { list-style: none; padding: 0; margin: 0; }
+.steps > li { position: relative; padding: 0 0 1.6rem 3.25rem; }
+.steps > li::before { content: ""; position: absolute; left: 1.1rem; top: 2.4rem; bottom: 0; border-left: 2px solid var(--line); }
+.steps > li:last-child::before { display: none; }
+.step-number { position: absolute; left: 0; top: 0; width: 2.3rem; height: 2.3rem; border: 2px solid var(--ink); border-radius: 50%; background: var(--paper); display: grid; place-items: center; font-weight: 700; font-size: 0.95rem; }
+.steps h4 { font-family: var(--font-body); font-weight: 700; font-size: 1.15rem; margin: 0.3rem 0 0.4rem; }
+.steps p, .steps ul { margin-bottom: 0.4rem; color: var(--muted); }
+.steps ul { padding-left: 1.2rem; }

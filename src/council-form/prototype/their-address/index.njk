@@ -1,0 +1,22 @@
+---
+title: What is their new address?
+backLink: who-moved-out/
+---
+{% from "proto-macros.njk" import formStart, formEnd, input with context %}
+{{ formStart("moving-back/") }}
+<fieldset class="p-fieldset">
+  <legend class="p-legend p-legend--page"><h1 class="p-heading-l">What is their new address?</h1></legend>
+  <div class="p-hint" id="leaver-address-hint">We use this to check our records and send their council tax bill to the right place.</div>
+  <div data-skip-if-checked="leaver-unknown">
+    {{ input("leaver-line-1", "Address line 1", "Enter their new address, or select “I do not know their new address”") }}
+    {{ input("leaver-line-2", "Address line 2 (optional)") }}
+    {{ input("leaver-town", "Town or city (optional)", width="20") }}
+    {{ input("leaver-postcode", "Postcode (optional)", check="postcode", checkError="Enter a real postcode, like WD6 1WA", width="10") }}
+  </div>
+  <p>or</p>
+  <div class="p-checkbox">
+    <input type="checkbox" id="leaver-unknown" name="leaver-unknown" value="I do not know their new address">
+    <label for="leaver-unknown">I do not know their new address</label>
+  </div>
+</fieldset>
+{{ formEnd() }}

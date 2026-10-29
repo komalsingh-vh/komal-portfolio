@@ -1,0 +1,91 @@
+/* Portal 5: navigation and labels. Wayfinding signage: slate, tangerine, a readable typeface. */
+.theme-wayfinding {
+  --ink: #1b2233;
+  --muted: #535c70;
+  --line: #d9dee8;
+  --paper: #fbfaf7;
+  --surface: #edf0f5;
+  --brand: #1f2a44;
+  --brand-ink: #f5f7fb;
+  --brand-soft: #e3e9f7;
+  --accent: #ff8a3d;
+  --accent-ink: #1b2233;
+  --link: #2a55c9;
+  --focus: #ff8a3d;
+  --font-head: "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Atkinson Hyperlegible", system-ui, sans-serif;
+  --head-weight: 700;
+  --radius: 12px;
+  --radius-sm: 8px;
+}
+.theme-wayfinding .portal-brand__mark { background: var(--accent); color: var(--brand); border-radius: 50% 50% 50% 0; }
+.theme-wayfinding .hero { background:
+  linear-gradient(90deg, transparent 0 calc(100% - 1px), rgb(255 255 255 / 4%) 0) 0 0 / 80px 80px,
+  linear-gradient(transparent 0 calc(100% - 1px), rgb(255 255 255 / 4%) 0) 0 0 / 80px 80px,
+  var(--brand); }
+.theme-wayfinding .tangerine { color: var(--accent); }
+.theme-wayfinding .card__num { background: var(--accent); color: var(--brand); border-radius: 50% 50% 50% 0; }
+
+/* Hero: the old and new menus as signposts */
+.signs { display: grid; gap: 1.25rem; }
+.sign { border-radius: 10px; padding: 1rem 1.1rem; }
+.sign__label { font-family: var(--font-head); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.6rem; display: block; }
+.sign ul { list-style: none; display: flex; flex-wrap: wrap; gap: 0.45rem; margin: 0; padding: 0; }
+.sign li { padding: 0.45rem 0.8rem; border-radius: 6px; font-weight: 700; font-size: 0.95rem; }
+.sign--old { background: rgb(255 255 255 / 7%); border: 1px dashed rgb(255 255 255 / 30%); }
+.sign--old .sign__label { color: #b9c1d4; }
+.sign--old li { background: rgb(255 255 255 / 10%); color: #cfd5e3; }
+.sign--old li.vague { text-decoration: underline wavy #ff8a3d; text-underline-offset: 4px; }
+.sign--new { background: #fff; color: var(--ink); box-shadow: 0 24px 50px -24px rgb(0 0 0 / 60%); }
+.sign--new .sign__label { color: var(--muted); }
+.sign--new li { background: var(--brand-soft); color: var(--ink); }
+.sign--new li::after { content: " →"; color: var(--link); }
+.sign-task { font-family: var(--font-head); font-size: 1.1rem; color: var(--brand-ink); display: flex; align-items: center; gap: 0.6rem; }
+.sign-task::before { content: "?"; display: inline-grid; place-items: center; width: 1.8rem; height: 1.8rem; border-radius: 50%; background: var(--accent); color: var(--brand); font-weight: 700; flex: none; }
+
+/* Sitemaps as real nested lists, drawn as trees */
+.tree, .tree ul { list-style: none; margin: 0; padding: 0; }
+.tree > li { margin-bottom: 1rem; }
+.tree > li > .node { font-family: var(--font-head); font-weight: 700; font-size: 1.05rem; }
+.tree ul { margin: 0.4rem 0 0 0.6rem; padding-left: 1rem; border-left: 2px solid var(--line); }
+.tree ul li { position: relative; padding: 0.15rem 0 0.15rem 0.2rem; }
+.tree ul li::before { content: ""; position: absolute; left: -1rem; top: 0.95rem; width: 0.8rem; border-top: 2px solid var(--line); }
+.node { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 0.35rem; }
+.flag { font-size: 0.72rem; font-weight: 700; padding: 0.05rem 0.45rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.04em; }
+.flag--dup { background: #fff1c9; color: #5c4300; }
+.flag--old { background: #fde2e0; color: #8a1c14; }
+.flag--vague { background: #ffe6d5; color: #8a3a00; }
+.flag--new { background: #dff3e8; color: #0b4a30; }
+.maps { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 1.5rem; align-items: start; }
+.maps__arrow { align-self: center; font-size: 2.5rem; color: var(--accent); font-family: var(--font-head); }
+@media (max-width: 56rem) { .maps { grid-template-columns: 1fr; } .maps__arrow { transform: rotate(90deg); justify-self: center; } }
+.map-card h3 { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
+.map-card h3 small { font-family: var(--font-body); font-weight: 400; font-size: 0.9rem; color: var(--muted); }
+.utility { margin-top: 1rem; padding-top: 0.9rem; border-top: 1px dashed var(--line); font-size: 0.92rem; color: var(--muted); }
+
+/* Card sort deck */
+.deck { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; padding: 0; margin: 0; }
+.deck li { background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 0.45rem 0.75rem; font-size: 0.92rem; box-shadow: 0 2px 0 var(--line); }
+.deck li:nth-child(3n) { transform: rotate(-1deg); }
+.deck li:nth-child(4n) { transform: rotate(1deg); }
+
+/* Tree test tasks */
+.tasks { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.9rem; grid-template-columns: repeat(2, minmax(0, 1fr)); counter-reset: task; }
+@media (max-width: 46rem) { .tasks { grid-template-columns: 1fr; } }
+.tasks li { counter-increment: task; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.1rem 1.25rem 1.1rem 3.6rem; position: relative; }
+.tasks li::before { content: counter(task); position: absolute; left: 1.1rem; top: 1.05rem; width: 1.8rem; height: 1.8rem; border-radius: 50% 50% 50% 0; background: var(--brand); color: var(--brand-ink); display: grid; place-items: center; font-weight: 700; font-size: 0.85rem; }
+.tasks q { display: block; font-family: var(--font-head); font-size: 1.05rem; font-weight: 600; margin-bottom: 0.4rem; quotes: "“" "”"; }
+.path { font-size: 0.9rem; color: var(--muted); }
+.path b { color: var(--ink); }
+
+/* Results bars, shown once study results are added */
+.result-bar { height: 0.6rem; border-radius: 999px; background: var(--line); margin-top: 0.5rem; overflow: hidden; }
+.result-bar span { display: block; height: 100%; background: var(--link); }
+.status { display: inline-flex; align-items: center; gap: 0.45rem; font-size: 0.85rem; font-weight: 700; padding: 0.25rem 0.7rem; border-radius: 999px; background: #fff1c9; color: #5c4300; }
+.status::before { content: ""; width: 0.55rem; height: 0.55rem; border-radius: 50%; background: currentColor; }
+.study { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: clamp(1.5rem, 4vw, 3rem); align-items: start; }
+@media (max-width: 56rem) { .study { grid-template-columns: 1fr; } }
+.facts { margin: 0; display: grid; gap: 0.8rem; }
+.facts div { display: grid; grid-template-columns: 8rem 1fr; gap: 0.75rem; }
+.facts dt { font-weight: 700; }
+.facts dd { margin: 0; color: var(--muted); }

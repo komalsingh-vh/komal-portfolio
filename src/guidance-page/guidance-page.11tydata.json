@@ -1,0 +1,19 @@
+{
+  "layout": "portal.njk",
+  "portal": {
+    "theme": "repairs",
+    "mark": "R",
+    "name": "Repairs guidance",
+    "title": "Turning a dense repairs page into clear, scannable content",
+    "description": "How Komal Singh cut a housing association's 2,100-word repairs page by 69%: annotated original, content audit, rewritten page and a step-by-step alternative.",
+    "fonts": "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Source+Sans+3:wght@400;600;700&display=swap",
+    "sections": [
+      { "id": "problem", "text": "Problem" },
+      { "id": "audit", "text": "Content audit" },
+      { "id": "rewrite", "text": "Rewritten page" },
+      { "id": "decisions", "text": "Decisions" },
+      { "id": "steps", "text": "Step by step" },
+      { "id": "results", "text": "Results" }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+---
+title: What is the address of the home you're applying for?
+backLink: others-18/
+---
+{% from "proto-macros.njk" import formStart, formEnd, input with context %}
+{{ formStart("account-number/") }}
+<fieldset class="p-fieldset">
+  <legend class="p-legend p-legend--page"><h1 class="p-heading-l">What is the address of the home you're applying for?</h1></legend>
+  {{ input("address-line-1", "Address line 1", "Enter address line 1, typically the building and street", autocomplete="address-line1") }}
+  {{ input("address-line-2", "Address line 2 (optional)", autocomplete="address-line2") }}
+  {{ input("address-town", "Town or city", "Enter town or city", autocomplete="address-level2", width="20") }}
+  {{ input("address-postcode", "Postcode", "Enter your postcode", check="postcode", checkError="Enter a real postcode, like WD6 1WA", autocomplete="postal-code", width="10") }}
+</fieldset>
+{{ formEnd() }}

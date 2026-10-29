@@ -1,0 +1,16 @@
+---
+title: How can we contact you?
+backLink: under-18/
+---
+{% from "proto-macros.njk" import formStart, formEnd, input with context %}
+{{ formStart("check-answers/") }}
+<h1>How can we contact you?</h1>
+{{ input("email", "Email address", "Enter your email address",
+  "We'll send your confirmation and our decision to this address.",
+  check="email", checkError="Enter an email address in the correct format, like name@example.com",
+  autocomplete="email", type="email", spellcheck="false") }}
+{{ input("phone", "Phone number (optional)", "",
+  "We'll only call if we need to check something.",
+  check="phone", checkError="Enter a phone number, like 01632 960 001 or 07700 900 982",
+  autocomplete="tel", type="tel", width="20") }}
+{{ formEnd() }}

@@ -1,0 +1,16 @@
+---
+title: Are they planning to move back?
+backLink: their-address/
+---
+{% from "proto-macros.njk" import formStart, formEnd, radios, date with context %}
+{% set returnDate %}
+{{ date("return", "When are they planning to move back?", "Date they are planning to move back",
+  "Enter the date they are planning to move back", "For example, 27 3 2027", heading=false, past=false) }}
+{% endset %}
+{{ formStart("under-18/") }}
+{{ radios("moving-back", "Are they planning to move back?", [
+  { value: "yes", text: "Yes", conditional: returnDate },
+  { value: "no", text: "No" }
+], "Select yes if they are planning to move back",
+"For example, if they're working away or staying in hospital for a while.") }}
+{{ formEnd() }}

@@ -1,0 +1,140 @@
+[
+  {
+    "slug": "council-form",
+    "title": "Making a council tax discount form easier to complete",
+    "label": "Form design · Public service",
+    "summary": "Rewriting a council's single person discount form using GOV.UK patterns, so residents can apply in one go without phoning.",
+    "skills": [
+      "GOV.UK Design System",
+      "Question protocol",
+      "Error messages",
+      "Accessibility"
+    ],
+    "ready": true,
+    "tile": {
+      "bg": "#0f3d2e",
+      "ink": "#f7f5ee",
+      "accent": "#ffd23f",
+      "font": "'DM Serif Display', Georgia, serif",
+      "weight": "400",
+      "mark": "CT",
+      "stat": "22 → 8",
+      "statLabel": "blanks down to questions"
+    }
+  },
+  {
+    "slug": "guidance-page",
+    "title": "Turning a dense repairs page into clear, scannable content",
+    "label": "Plain English · Guidance",
+    "summary": "Cutting a housing association's 2,100-word repairs page by about two thirds and leading with what tenants come for: is it an emergency, and how do I report it?",
+    "skills": [
+      "Plain English",
+      "Content audit",
+      "Content structure",
+      "Link text"
+    ],
+    "ready": true,
+    "tile": {
+      "bg": "#fbeee3",
+      "ink": "#231a15",
+      "accent": "#c2410c",
+      "font": "'Bricolage Grotesque', sans-serif",
+      "weight": "800",
+      "mark": "R",
+      "stat": "−69%",
+      "statLabel": "words, same facts"
+    }
+  },
+  {
+    "slug": "touchpoints",
+    "title": "One missed delivery, six messages, one story",
+    "label": "Multi-channel content",
+    "summary": "Rewriting every message a courier sends after a failed delivery, from the card through the door to the reminder text, so they all say the same thing in the same words.",
+    "skills": [
+      "Content matrix",
+      "Message hierarchy",
+      "Terminology",
+      "Tone of voice"
+    ],
+    "ready": true,
+    "tile": {
+      "bg": "#1b1640",
+      "ink": "#f4f2ff",
+      "accent": "#c8f560",
+      "font": "'Sora', sans-serif",
+      "weight": "700",
+      "mark": "1:5",
+      "stat": "4 → 1",
+      "statLabel": "texts to send one message"
+    }
+  },
+  {
+    "slug": "checkout",
+    "title": "Fixing the microcopy in an online checkout",
+    "label": "UX writing · Ecommerce",
+    "summary": "Auditing and rewriting every word in a homeware shop's checkout, from “Submit” to “Pay £42.50”, including 12 error, empty and edge states.",
+    "skills": [
+      "Microcopy",
+      "Error states",
+      "Calls to action",
+      "Accessibility"
+    ],
+    "ready": true,
+    "tile": {
+      "bg": "#0e0e0e",
+      "ink": "#ffffff",
+      "accent": "#ff3d9a",
+      "font": "'Archivo', sans-serif",
+      "weight": "800",
+      "mark": "£",
+      "stat": "Pay £42.50",
+      "statLabel": "instead of “Submit”"
+    }
+  },
+  {
+    "slug": "navigation",
+    "title": "Restructuring a GP surgery website around patients' tasks",
+    "label": "Information architecture",
+    "summary": "Replacing “Patient Services”, “Information” and “Resources” with a menu built around what patients come to do, with a card sort and tree test to prove it.",
+    "skills": [
+      "Content inventory",
+      "Labelling",
+      "Card sorting",
+      "Tree testing"
+    ],
+    "ready": true,
+    "tile": {
+      "bg": "#1f2a44",
+      "ink": "#f5f7fb",
+      "accent": "#ff8a3d",
+      "font": "'Space Grotesk', sans-serif",
+      "weight": "700",
+      "mark": "→",
+      "stat": "4 → 0",
+      "statLabel": "labels that could hold anything"
+    }
+  },
+  {
+    "slug": "style-guide",
+    "title": "A content style guide for a small gym booking app",
+    "label": "Voice and tone · Content operations",
+    "summary": "Turning 4 voices into 1: voice principles, a tone scale, 9 style rules and 4 content patterns that anyone on the team can use.",
+    "skills": [
+      "Voice and tone",
+      "Style rules",
+      "Content patterns",
+      "Inclusive language"
+    ],
+    "ready": true,
+    "tile": {
+      "bg": "#ffd84d",
+      "ink": "#161a2e",
+      "accent": "#2340c9",
+      "font": "'Fraunces', Georgia, serif",
+      "weight": "650",
+      "mark": "F",
+      "stat": "4 → 1",
+      "statLabel": "labels for the same button"
+    }
+  }
+]

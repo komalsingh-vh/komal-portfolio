@@ -1,0 +1,20 @@
+{
+  "layout": "portal.njk",
+  "portal": {
+    "theme": "signal",
+    "mark": "1:5",
+    "name": "One moment, every touchpoint",
+    "title": "One missed delivery, six messages, one story",
+    "description": "How Komal Singh rewrote every message a courier sends after a failed delivery: content matrix, message hierarchy, terminology list and channel-by-channel rewrites.",
+    "fonts": "https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Manrope:wght@400;600;700&display=swap",
+    "sections": [
+      { "id": "moment", "text": "The moment" },
+      { "id": "before", "text": "Before" },
+      { "id": "matrix", "text": "Content matrix" },
+      { "id": "hierarchy", "text": "Hierarchy" },
+      { "id": "after", "text": "Rewrites" },
+      { "id": "terms", "text": "Terminology" },
+      { "id": "decisions", "text": "Decisions" }
+    ]
+  }
+}

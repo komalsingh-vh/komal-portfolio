@@ -1,0 +1,47 @@
+---
+title: Check your answers before sending your application
+backLink: contact/
+---
+{% set rows = [
+  { key: "Anyone else aged 18 or over living with you", answer: "others", page: "others-18/" },
+  { key: "Address", answer: "address-line-1,address-line-2,address-town,address-postcode", format: "lines", page: "address/" },
+  { key: "Council tax account number", answer: "account", page: "account-number/" },
+  { key: "Full name", answer: "full-name", page: "name/" },
+  { key: "Why you're now the only adult", answer: "reason", page: "reason/" },
+  { key: "What has changed", answer: "reason-other", page: "reason/", showIf: "reason=other" },
+  { key: "Date you became the only adult", answer: "became-only-adult", format: "date", page: "date/", showIf: "reason!=always" },
+  { key: "Date you moved in", answer: "became-only-adult", format: "date", page: "date/", showIf: "reason=always" },
+  { key: "Person who moved out", answer: "leaver-name", page: "who-moved-out/", showIf: "reason=moved" },
+  { key: "Their new address", answer: "leaver-line-1,leaver-line-2,leaver-town,leaver-postcode,leaver-unknown", format: "lines", page: "their-address/", showIf: "reason=moved" },
+  { key: "Planning to move back", answer: "moving-back", page: "moving-back/", showIf: "reason=moved" },
+  { key: "Date they plan to move back", answer: "return", format: "date", page: "moving-back/", showIf: "reason=moved&moving-back=yes" },
+  { key: "Anyone aged 16 or 17 living with you", answer: "teen", page: "under-18/" },
+  { key: "Their name", answer: "teen-name", page: "under-18/", showIf: "teen=yes" },
+  { key: "Their date of birth", answer: "teen-dob", format: "date", page: "under-18/", showIf: "teen=yes" },
+  { key: "Email address", answer: "email", page: "contact/" },
+  { key: "Phone number", answer: "phone", page: "contact/" }
+] %}
+<h1>Check your answers before sending your application</h1>
+
+<dl class="p-summary">
+  {%- for row in rows %}
+  <div class="p-summary__row" {% if row.showIf %}data-show-if="{{ row.showIf }}"{% endif %}>
+    <dt>{{ row.key }}</dt>
+    <dd data-answer="{{ row.answer }}" {% if row.format %}data-format="{{ row.format }}"{% endif %}>Not given</dd>
+    <dd class="p-summary__actions"><a href="{{ prototype.root }}{{ row.page }}?change=1">Change<span class="p-visually-hidden"> {{ row.key | lower }}</span></a></dd>
+  </div>
+  {%- endfor %}
+</dl>
+
+<h2>Now send your application</h2>
+<p>By sending this application, you confirm that the information you've given is correct, to the best of your knowledge.</p>
+<p>You must tell us within 21 days if another adult moves in, or if someone living with you turns 18.</p>
+
+<div class="p-warning">
+  <span class="p-warning-icon" aria-hidden="true">!</span>
+  <span><span class="p-visually-hidden">Warning: </span>You could be fined if you give false information, or if you do not tell us about a change.</span>
+</div>
+
+<form method="get" action="{{ prototype.root }}confirmation/">
+  <button type="submit" class="p-button">Accept and send</button>
+</form>

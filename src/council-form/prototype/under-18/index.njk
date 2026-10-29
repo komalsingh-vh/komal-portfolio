@@ -1,0 +1,16 @@
+---
+title: Does anyone aged 16 or 17 live with you?
+backLink: date/
+---
+{% from "proto-macros.njk" import formStart, formEnd, radios, input, date with context %}
+{% set teenDetails %}
+{{ input("teen-name", "Their full name", "Enter their full name", spellcheck="false") }}
+{{ date("teen-dob", "Their date of birth", "Date of birth", "Enter their date of birth", "For example, 27 3 2009", heading=false) }}
+{% endset %}
+{{ formStart("contact/") }}
+{{ radios("teen", "Does anyone aged 16 or 17 live with you?", [
+  { value: "yes", text: "Yes", conditional: teenDetails },
+  { value: "no", text: "No" }
+], "Select yes if anyone aged 16 or 17 lives with you",
+"We ask so we can review your discount when they turn 18. If there's more than one, tell us about the oldest.") }}
+{{ formEnd() }}

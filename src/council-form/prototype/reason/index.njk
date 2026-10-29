@@ -1,0 +1,19 @@
+---
+title: Why are you now the only adult living there?
+backLink: name/
+---
+{% from "proto-macros.njk" import formStart, formEnd, radios with context %}
+{% set otherDetails %}
+<div class="p-form-group" data-group="reason-other">
+  <label class="p-label" for="reason-other">Tell us what has changed</label>
+  <textarea class="p-input" id="reason-other" name="reason-other" rows="4" data-validate="input" data-required="Tell us why you are now the only adult living there"></textarea>
+</div>
+{% endset %}
+{{ formStart("date/") }}
+{{ radios("reason", "Why are you now the only adult living there?", [
+  { value: "moved", text: "Someone moved out" },
+  { value: "died", text: "Someone I lived with died" },
+  { value: "always", text: "I have always lived on my own" },
+  { value: "other", text: "Something else", conditional: otherDetails }
+], "Select why you are now the only adult living there") }}
+{{ formEnd() }}

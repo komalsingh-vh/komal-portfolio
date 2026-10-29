@@ -1,0 +1,83 @@
+{#
+  Form building blocks for the prototypes, following GOV.UK Design System patterns.
+  Validation messages sit in data attributes and are read by /js/prototype.js.
+#}
+
+{# The question page wrapper: the form, its routing and the Continue button #}
+{% macro formStart(next, route) %}
+<form class="proto-form" method="get" action="{{ prototype.root }}{{ next }}" data-next="{{ next }}" {% if route %}data-route='{{ route | dump }}'{% endif %} novalidate>
+{% endmacro %}
+
+{% macro formEnd(button) %}
+  <button type="submit" class="p-button">{{ button or "Continue" }}</button>
+</form>
+{% endmacro %}
+
+{# Radios. options: [{ value, text, hint, conditional }] #}
+{% macro radios(name, legend, options, required, hint, heading=true, inline=false) %}
+<div class="p-form-group" data-group="{{ name }}">
+  <fieldset class="p-fieldset" data-validate="radios" data-name="{{ name }}" data-required="{{ required }}" {% if hint %}aria-describedby="{{ name }}-hint"{% endif %}>
+    <legend class="p-legend{% if heading %} p-legend--page{% endif %}">
+      {% if heading %}<h1 class="p-heading-l">{{ legend }}</h1>{% else %}{{ legend }}{% endif %}
+    </legend>
+    {% if hint %}<div id="{{ name }}-hint" class="p-hint">{{ hint | safe }}</div>{% endif %}
+    <div class="p-radios{% if inline %} p-radios--inline{% endif %}">
+      {%- for option in options %}
+      {%- set id = name + "-" + loop.index %}
+      <div class="p-radios__item">
+        <input class="p-radios__input" id="{{ id }}" name="{{ name }}" type="radio" value="{{ option.value }}" {% if option.conditional %}data-reveals="{{ id }}-conditional" aria-controls="{{ id }}-conditional"{% endif %} {% if option.hint %}aria-describedby="{{ id }}-hint"{% endif %}>
+        <label class="p-radios__label" for="{{ id }}">{{ option.text }}</label>
+        {% if option.hint %}<div id="{{ id }}-hint" class="p-hint p-radios__hint">{{ option.hint }}</div>{% endif %}
+      </div>
+      {% if option.conditional %}
+      <div class="p-radios__conditional" id="{{ id }}-conditional" data-conditional hidden>
+        {{ option.conditional | safe }}
+      </div>
+      {% endif %}
+      {%- endfor %}
+    </div>
+  </fieldset>
+</div>
+{% endmacro %}
+
+{# Text input. check: postcode | email | phone | digits #}
+{% macro input(name, label, required="", hint="", check="", checkError="", autocomplete="", width="", heading=false, type="text", inputmode="", spellcheck="") %}
+<div class="p-form-group" data-group="{{ name }}">
+  {% if heading %}<h1 class="p-label-wrapper">{% endif %}
+  <label class="p-label{% if heading %} p-heading-l{% endif %}" for="{{ name }}">{{ label }}</label>
+  {% if heading %}</h1>{% endif %}
+  {% if hint %}<div id="{{ name }}-hint" class="p-hint">{{ hint | safe }}</div>{% endif %}
+  <input class="p-input{% if width %} p-input--{{ width }}{% endif %}" id="{{ name }}" name="{{ name }}" type="{{ type }}"
+    data-validate="input" data-required="{{ required }}" data-check="{{ check }}" data-check-error="{{ checkError }}"
+    {% if hint %}aria-describedby="{{ name }}-hint"{% endif %}
+    {% if autocomplete %}autocomplete="{{ autocomplete }}"{% endif %}
+    {% if inputmode %}inputmode="{{ inputmode }}"{% endif %}
+    {% if spellcheck %}spellcheck="{{ spellcheck }}"{% endif %}>
+</div>
+{% endmacro %}
+
+{# Date input with separate day, month and year boxes #}
+{% macro date(name, legend, label, required, hint="For example, 27 3 2007", heading=true, past=true, autocomplete="") %}
+<div class="p-form-group" data-group="{{ name }}">
+  <fieldset class="p-fieldset" role="group" aria-describedby="{{ name }}-hint" data-validate="date" data-name="{{ name }}" data-label="{{ label }}" data-required="{{ required }}" {% if past %}data-past="true"{% endif %}>
+    <legend class="p-legend{% if heading %} p-legend--page{% endif %}">
+      {% if heading %}<h1 class="p-heading-l" data-heading>{{ legend }}</h1>{% else %}{{ legend }}{% endif %}
+    </legend>
+    <div id="{{ name }}-hint" class="p-hint">{{ hint }}</div>
+    <div class="p-date">
+      <div class="p-date__item">
+        <label class="p-label p-date__label" for="{{ name }}-day">Day</label>
+        <input class="p-input p-input--2" id="{{ name }}-day" name="{{ name }}-day" type="text" inputmode="numeric" data-part="day" {% if autocomplete %}autocomplete="{{ autocomplete }}-day"{% endif %}>
+      </div>
+      <div class="p-date__item">
+        <label class="p-label p-date__label" for="{{ name }}-month">Month</label>
+        <input class="p-input p-input--2" id="{{ name }}-month" name="{{ name }}-month" type="text" inputmode="numeric" data-part="month" {% if autocomplete %}autocomplete="{{ autocomplete }}-month"{% endif %}>
+      </div>
+      <div class="p-date__item">
+        <label class="p-label p-date__label" for="{{ name }}-year">Year</label>
+        <input class="p-input p-input--4" id="{{ name }}-year" name="{{ name }}-year" type="text" inputmode="numeric" data-part="year" {% if autocomplete %}autocomplete="{{ autocomplete }}-year"{% endif %}>
+      </div>
+    </div>
+  </fieldset>
+</div>
+{% endmacro %}

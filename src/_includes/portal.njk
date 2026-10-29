@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en-GB" class="theme-{{ portal.theme }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ portal.title }} – {{ site.name }}, {{ site.role | lower }}</title>
+  <meta name="description" content="{{ portal.description }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="{{ portal.fonts }}">
+  <link rel="stylesheet" href="/css/portal.css">
+  <link rel="stylesheet" href="/css/themes/{{ portal.theme }}.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="portal-header">
+    <div class="wrap portal-header__inner">
+      <a class="portal-brand" href="#top">
+        <span class="portal-brand__mark" aria-hidden="true">{{ portal.mark }}</span>
+        <span class="portal-brand__name">{{ portal.name }}</span>
+      </a>
+      <nav class="portal-nav" aria-label="Sections">
+        <ul>
+          <li class="portal-nav__home"><a href="/">← All projects</a></li>
+          {%- for item in portal.sections %}
+          <li><a href="#{{ item.id }}">{{ item.text }}</a></li>
+          {%- endfor %}
+        </ul>
+      </nav>
+      <a class="portal-home" href="/">All projects</a>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    {{ content | safe }}
+  </main>
+
+  <footer class="portal-footer">
+    <div class="wrap portal-footer__inner">
+      <div>
+        <p class="portal-footer__name">{{ site.name }}</p>
+        <p>{{ site.role }}, {{ site.location }}</p>
+      </div>
+      <ul class="portal-footer__links">
+        <li><a href="/">Portfolio home</a></li>
+        <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

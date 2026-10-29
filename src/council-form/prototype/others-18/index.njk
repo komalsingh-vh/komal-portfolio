@@ -1,0 +1,12 @@
+---
+title: Does anyone else aged 18 or over live with you?
+backLink: ""
+---
+{% from "proto-macros.njk" import formStart, formEnd, radios with context %}
+{{ formStart("address/", { others: { yes: "not-eligible/" } }) }}
+{{ radios("others", "Does anyone else aged 18 or over live with you?", [
+  { value: "yes", text: "Yes" },
+  { value: "no", text: "No" }
+], "Select yes if anyone else aged 18 or over lives with you",
+"This means anyone whose main home is with you, including a partner, family member or lodger.", true, true) }}
+{{ formEnd() }}
